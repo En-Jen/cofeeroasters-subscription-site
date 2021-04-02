@@ -31,7 +31,7 @@ export const FONT_SIZES = {
     l: '2rem', //32px
     xl: '2.5rem', //40px
     xxl: '3rem', //48px
-    xxl: '4.5rem' //72px
+    xxxl: '4.5rem' //72px
 };
 
 // Media queries
@@ -40,7 +40,7 @@ export const BREAKPOINT_SIZES = {
 	mobile: 480,
 	tablet: 768,
 	laptop: 1024,
-	desktop: 1400,
+	desktop: 1200,
 };
 
 export const BREAKPOINTS = {

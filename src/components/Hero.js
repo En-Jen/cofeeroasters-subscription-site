@@ -38,8 +38,8 @@ function Hero({ variant, title, description, children }) {
 const BaseHero = styled.div`
 	background-size: cover;
 	border-radius: 10px;
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 `;
 
 const HomeHero = styled(BaseHero)`
@@ -48,6 +48,10 @@ const HomeHero = styled(BaseHero)`
 
 	@media ${BREAKPOINTS.tablet} {
 		background-image: url(${coffeePressTablet});
+	}
+
+	@media ${BREAKPOINTS.laptop} {
+		background-image: url(${coffeePressDesktop});
 	}
 `;
 
@@ -58,6 +62,10 @@ const AboutHero = styled(BaseHero)`
 	@media ${BREAKPOINTS.tablet} {
 		background-image: url(${whiteCupTablet});
 	}
+
+	@media ${BREAKPOINTS.laptop} {
+		background-image: url(${whiteCupDesktop});
+	}
 `;
 
 const PlanHero = styled(BaseHero)`
@@ -67,29 +75,75 @@ const PlanHero = styled(BaseHero)`
 	@media ${BREAKPOINTS.tablet} {
 		background-image: url(${blackCupTablet});
 	}
+
+	@media ${BREAKPOINTS.laptop} {
+		background-image: url(${blackCupDesktop});
+	}
 `;
 
 const Content = styled.div`
 	color: ${COLORS.lightCream[100]};
 	text-align: center;
-	padding-left: 24px;
-	padding-right: 24px;
+	padding: 0 24px;
+
+	@media ${BREAKPOINTS.tablet} {
+		text-align: left;
+		width: 398px;
+		padding: 0;
+		margin-left: 58px;
+	}
+
+	@media ${BREAKPOINTS.desktop} {
+		width: 398px;
+		margin-left: 85px;
+	}
+
+	${HomeHero} & {
+		@media ${BREAKPOINTS.desktop} {
+			width: 493px;
+		}
+	}
+
+	${AboutHero} & {
+		@media ${BREAKPOINTS.desktop} {
+			width: 445px;
+		}
+	}
+
+	${PlanHero} & {
+		@media ${BREAKPOINTS.desktop} {
+			width: 486px;
+		}
+	}
 `;
 
 const Heading = styled.h1`
-	${HomeHero} & {
+	${HomeHero} &,
+    ${PlanHero} & {
 		font-size: ${FONT_SIZES.xl};
-        margin-bottom: 24px;
+		margin-bottom: 24px;
+
+		@media ${BREAKPOINTS.tablet} {
+			font-size: ${FONT_SIZES.xxl};
+		}
+
+		@media ${BREAKPOINTS.desktop} {
+			font-size: ${FONT_SIZES.xxxl};
+            margin-bottom: 32px;
+		}
 	}
 
 	${AboutHero} & {
 		font-size: 1.75rem;
-        margin-bottom: 24px;
-	}
+		margin-bottom: 24px;
 
-    ${PlanHero} & {
-		font-size: ${FONT_SIZES.xl};
-        margin-bottom: 22px;
+		@media ${BREAKPOINTS.tablet} {
+			font-size: ${FONT_SIZES.l};
+		}
+
+		@media ${BREAKPOINTS.desktop} {
+			font-size: ${FONT_SIZES.xl};
+		}
 	}
 `;
 

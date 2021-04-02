@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 
 function Plan() {
 	return (
-		<div>
+		<main>
 			Plan
 			<Hero
 				variant="plan"
@@ -12,7 +12,7 @@ function Plan() {
 				description="Build a subscription plan that best fits your needs. We offer an assortment of the best 
 				artisan coffees from around the globe delivered fresh to your door."
 			/>
-		</div>
+		</main>
 	);
 }
 

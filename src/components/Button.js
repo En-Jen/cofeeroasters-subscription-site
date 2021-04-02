@@ -3,8 +3,8 @@ import styled from 'styled-components/macro';
 
 import { COLORS, FONTS, FONT_SIZES } from '../constants';
 
-function Button({ children }) {
-	return <Wrapper>{children}</Wrapper>;
+function Button({ disabled, children }) {
+	return <Wrapper disabled={disabled}>{children}</Wrapper>;
 }
 
 const Wrapper = styled.button`
@@ -24,7 +24,7 @@ const Wrapper = styled.button`
 
 	&:disabled {
 		background-color: ${COLORS.grey[300]};
-		cursor: revert;
+		cursor: not-allowed;
 	}
 `;
 

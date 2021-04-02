@@ -6,13 +6,12 @@ import { BREAKPOINTS } from '../constants';
 import logo from '../assets/shared/desktop/logo.svg';
 import iconHamburger from '../assets/shared/mobile/icon-hamburger.svg';
 import iconClose from '../assets/shared/mobile/icon-close.svg';
+import Logo from './Logo';
 
 function Navbar() {
 	return (
 		<Nav>
-			<Link exact to="/">
-				<img src={logo} alt="coffeeroasters logo" />
-			</Link>
+			<Logo />
 			<List role="list">
 				<li>
 					<Link exact to="/">

@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 
 function About() {
 	return (
-		<div>
+		<main>
 			About
 			<Hero
 				variant="about"
@@ -13,7 +13,7 @@ function About() {
 				coffee from around the world. We have since been dedicated to bring the perfect cup - from 
 				bean to brew - in every shipment."
 			/>
-		</div>
+		</main>
 	);
 }
 

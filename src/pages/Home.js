@@ -1,3 +1,5 @@
+// Need to figure out how to make Spacer responsive
+
 import React from 'react';
 import Hero from '../components/Hero';
 import Spacer from '../components/Spacer';
@@ -5,7 +7,7 @@ import Button from '../components/Button';
 
 function Home() {
 	return (
-		<div>
+		<main>
 			Home
 			<Hero
 				variant="home"
@@ -13,10 +15,10 @@ function Home() {
 				description="Start your mornings with the world’s best coffees. Try our expertly curated artisan 
   				coffees from our best roasters delivered directly to your door, at your schedule."
 			>
-				<Spacer size={39} />
+				<Spacer size={40} />
 				<Button>Create your plan</Button>
 			</Hero>
-		</div>
+		</main>
 	);
 }
 
