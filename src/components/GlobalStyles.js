@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components/macro';
 
+import { BREAKPOINTS, FONTS, FONT_SIZES } from '../constants';
+
 const GlobalStyles = createGlobalStyle`
     /* RESET from https://piccalil.li/blog/a-modern-css-reset */
 
@@ -86,7 +88,19 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-family: 'Barlow', sans-serif;
+        font-family: ${FONTS.primary};
+        font-size: ${FONT_SIZES.xs};
+        line-height: 1.625;
+        max-width: 88%;
+        margin: 0 auto;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: ${FONTS.secondary};
+    }
+
+    h1 {
+        line-height: 1;
     }
 `;
 

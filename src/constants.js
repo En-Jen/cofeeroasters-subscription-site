@@ -30,6 +30,7 @@ export const FONT_SIZES = {
     m: '1.5rem', //24px
     l: '2rem', //32px
     xl: '2.5rem', //40px
+    xxl: '3rem', //48px
     xxl: '4.5rem' //72px
 };
 
