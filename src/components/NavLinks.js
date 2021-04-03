@@ -8,7 +8,7 @@ function NavLinks({ variant }) {
 	let Component;
 	if (variant === 'hamburger') {
 		Component = HamburgerLinksList;
-	} else if (variant === 'default') {
+	} else if (!variant) {
 		Component = DefaultLinksList;
 	} else {
 		throw new Error(`Unrecognized Hero variant: ${variant}`);
@@ -65,6 +65,11 @@ const DefaultLinksList = styled(BaseNavList)`
 
 	a {
 		color: ${COLORS.grey[500]};
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: ${COLORS.lightCream[100]};
+		}
 	}
 
 	@media ${BREAKPOINTS.tablet} {
@@ -75,6 +80,12 @@ const DefaultLinksList = styled(BaseNavList)`
 const ListItem = styled.li`
 	${HamburgerLinksList} &:not(:last-of-type) {
 		margin-bottom: 32px;
+	}
+
+	${DefaultLinksList} & {
+		&:hover {
+			color: ${COLORS.lightCream[100]};
+		}
 	}
 
 	${DefaultLinksList} &:not(:last-of-type) {

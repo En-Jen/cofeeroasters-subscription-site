@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components/macro';
 
-import { BREAKPOINTS, FONTS, FONT_SIZES } from '../constants';
+import { FONTS, FONT_SIZES } from '../constants';
 
 const GlobalStyles = createGlobalStyle`
     /* RESET from https://piccalil.li/blog/a-modern-css-reset */
