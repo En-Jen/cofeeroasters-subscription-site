@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
 import { BREAKPOINTS } from '../constants';
@@ -7,28 +6,13 @@ import logo from '../assets/shared/desktop/logo.svg';
 import iconHamburger from '../assets/shared/mobile/icon-hamburger.svg';
 import iconClose from '../assets/shared/mobile/icon-close.svg';
 import Logo from './Logo';
+import NavLinks from './NavLinks';
 
 function Navbar() {
 	return (
 		<Nav>
 			<Logo />
-			<List role="list">
-				<li>
-					<Link exact to="/">
-						Home
-					</Link>
-				</li>
-				<li>
-					<Link exact to="/about">
-						About us
-					</Link>
-				</li>
-				<li>
-					<Link exact to="/plan">
-						Create your plan
-					</Link>
-				</li>
-			</List>
+			<NavLinks variant="hamburger" />
 		</Nav>
 	);
 }
