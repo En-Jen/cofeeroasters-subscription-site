@@ -15,23 +15,25 @@ function NavLinks({ variant }) {
 	}
 
 	return (
-		<Component role="list">
-			<ListItem>
-				<Link exact to="/">
-					Home
-				</Link>
-			</ListItem>
-			<ListItem>
-				<Link exact to="/about">
-					About us
-				</Link>
-			</ListItem>
-			<ListItem>
-				<Link exact to="/plan">
-					Create your plan
-				</Link>
-			</ListItem>
-		</Component>
+		<nav>
+			<Component role="list">
+				<ListItem>
+					<Link exact to="/">
+						Home
+					</Link>
+				</ListItem>
+				<ListItem>
+					<Link exact to="/about">
+						About us
+					</Link>
+				</ListItem>
+				<ListItem>
+					<Link exact to="/plan">
+						Create your plan
+					</Link>
+				</ListItem>
+			</Component>
+		</nav>
 	);
 }
 

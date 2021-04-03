@@ -5,7 +5,6 @@ import Hero from '../components/Hero';
 function About() {
 	return (
 		<main>
-			About
 			<Hero
 				variant="about"
 				title="About Us"

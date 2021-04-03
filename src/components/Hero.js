@@ -35,7 +35,7 @@ function Hero({ variant, title, description, children }) {
 	);
 }
 
-const BaseHero = styled.div`
+const BaseHero = styled.section`
 	background-size: cover;
 	border-radius: 10px;
 	display: flex;
@@ -129,7 +129,7 @@ const Heading = styled.h1`
 
 		@media ${BREAKPOINTS.desktop} {
 			font-size: ${FONT_SIZES.xxxl};
-            margin-bottom: 32px;
+			margin-bottom: 32px;
 		}
 	}
 

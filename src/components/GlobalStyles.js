@@ -10,20 +10,8 @@ const GlobalStyles = createGlobalStyle`
     *::before,
     *::after {
         box-sizing: border-box;
-    }
-
-    /* Remove default margin */
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    figure,
-    blockquote,
-    dl,
-    dd {
         margin: 0;
+        padding: 0;
     }
 
     /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -81,12 +69,6 @@ const GlobalStyles = createGlobalStyle`
     }
 
     /* GLOBAL STYLES */
-    *,
-    *::before,
-    *::after {
-        padding: 0;
-    }
-
     body {
         font-family: ${FONTS.primary};
         font-size: ${FONT_SIZES.xs};

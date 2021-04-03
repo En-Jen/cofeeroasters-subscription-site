@@ -5,7 +5,6 @@ import Hero from '../components/Hero';
 function Plan() {
 	return (
 		<main>
-			Plan
 			<Hero
 				variant="plan"
 				title="Create a plan"

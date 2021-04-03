@@ -8,14 +8,14 @@ import NavLinks from './NavLinks';
 
 function Navbar() {
 	return (
-		<Nav>
+		<Wrapper>
 			<Logo />
 			<NavLinks variant="hamburger" />
-		</Nav>
+		</Wrapper>
 	);
 }
 
-const Nav = styled.nav`
+const Wrapper = styled.header`
 	display: flex;
 	justify-content: space-between;
 `;
