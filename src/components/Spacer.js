@@ -6,7 +6,7 @@ import styled from 'styled-components/macro';
 import { BREAKPOINTS } from '../constants';
 
 function getResponsiveSpace(breakpoint) {
-	return typeof breakpoint === 'number' ? breakpoint : undefined;
+	return typeof breakpoint === 'number' ? breakpoint + 'px' : undefined;
 }
 
 const Spacer = styled.span`
@@ -18,38 +18,38 @@ const Spacer = styled.span`
 
 	// Make Spacer responsive
 	@media ${BREAKPOINTS.mobileSmall} {
-		width: ${p => getResponsiveSpace(p.mobileSmallAndUp)}px;
-		min-width: ${p => getResponsiveSpace(p.mobileSmallAndUp)}px;
-		height: ${p => getResponsiveSpace(p.mobileSmallAndUp)}px;
-		min-height: ${p => getResponsiveSpace(p.mobileSmallAndUp)}px;
+		width: ${p => getResponsiveSpace(p.mobileSmallAndUp)};
+		min-width: ${p => getResponsiveSpace(p.mobileSmallAndUp)};
+		height: ${p => getResponsiveSpace(p.mobileSmallAndUp)};
+		min-height: ${p => getResponsiveSpace(p.mobileSmallAndUp)};
 	}
 
 	@media ${BREAKPOINTS.mobile} {
-		width: ${p => getResponsiveSpace(p.mobileAndUp)}px;
-		min-width: ${p => getResponsiveSpace(p.mobileAndUp)}px;
-		height: ${p => getResponsiveSpace(p.mobileAndUp)}px;
-		min-height: ${p => getResponsiveSpace(p.mobileAndUp)}px;
+		width: ${p => getResponsiveSpace(p.mobileAndUp)};
+		min-width: ${p => getResponsiveSpace(p.mobileAndUp)};
+		height: ${p => getResponsiveSpace(p.mobileAndUp)};
+		min-height: ${p => getResponsiveSpace(p.mobileAndUp)};
 	}
 
 	@media ${BREAKPOINTS.tablet} {
-		width: ${p => getResponsiveSpace(p.tabletAndUp)}px;
-		min-width: ${p => getResponsiveSpace(p.tabletAndUp)}px;
-		height: ${p => getResponsiveSpace(p.tabletAndUp)}px;
-		min-height: ${p => getResponsiveSpace(p.tabletAndUp)}px;
+		width: ${p => getResponsiveSpace(p.tabletAndUp)};
+		min-width: ${p => getResponsiveSpace(p.tabletAndUp)};
+		height: ${p => getResponsiveSpace(p.tabletAndUp)};
+		min-height: ${p => getResponsiveSpace(p.tabletAndUp)};
 	}
 
 	@media ${BREAKPOINTS.laptop} {
-		width: ${p => getResponsiveSpace(p.laptopAndUp)}px;
-		min-width: ${p => getResponsiveSpace(p.laptopAndUp)}px;
-		height: ${p => getResponsiveSpace(p.laptopAndUp)}px;
-		min-height: ${p => getResponsiveSpace(p.laptopAndUp)}px;
+		width: ${p => getResponsiveSpace(p.laptopAndUp)};
+		min-width: ${p => getResponsiveSpace(p.laptopAndUp)};
+		height: ${p => getResponsiveSpace(p.laptopAndUp)};
+		min-height: ${p => getResponsiveSpace(p.laptopAndUp)};
 	}
 
 	@media ${BREAKPOINTS.desktop} {
-		width: ${p => getResponsiveSpace(p.desktopAndUp)}px;
-		min-width: ${p => getResponsiveSpace(p.desktopAndUp)}px;
-		height: ${p => getResponsiveSpace(p.desktopAndUp)}px;
-		min-height: ${p => getResponsiveSpace(p.desktopAndUp)}px;
+		width: ${p => getResponsiveSpace(p.desktopAndUp)};
+		min-width: ${p => getResponsiveSpace(p.desktopAndUp)};
+		height: ${p => getResponsiveSpace(p.desktopAndUp)};
+		min-height: ${p => getResponsiveSpace(p.desktopAndUp)};
 	}
 `;
 

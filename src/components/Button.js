@@ -3,8 +3,12 @@ import styled from 'styled-components/macro';
 
 import { COLORS, FONTS, FONT_SIZES } from '../constants';
 
-function Button({ disabled, children }) {
-	return <Wrapper disabled={disabled}>{children}</Wrapper>;
+function Button({ disabled, onClick, children }) {
+	return (
+		<Wrapper disabled={disabled} onClick={onClick}>
+			{children}
+		</Wrapper>
+	);
 }
 
 const Wrapper = styled.button`

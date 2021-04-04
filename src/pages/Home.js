@@ -1,11 +1,10 @@
-// Need to figure out how to make Spacer responsive
-
 import React from 'react';
+
 import Hero from '../components/Hero';
 import Spacer from '../components/Spacer';
 import Button from '../components/Button';
 
-function Home() {
+function Home(props) {
 	return (
 		<main>
 			<Hero
@@ -15,7 +14,9 @@ function Home() {
   				coffees from our best roasters delivered directly to your door, at your schedule."
 			>
 				<Spacer size={40} desktopAndUp={58} />
-				<Button>Create your plan</Button>
+				<Button onClick={() => props.history.push('/plan')}>
+					Create your plan
+				</Button>
 			</Hero>
 		</main>
 	);
