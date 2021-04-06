@@ -2,6 +2,7 @@ import React from 'react';
 
 import Hero from '../components/Hero';
 import HowItWorks from '../components/HowItWorks';
+import PlanAccordion from '../components/PlanAccordion';
 
 function Plan() {
 	return (
@@ -13,6 +14,7 @@ function Plan() {
 				artisan coffees from around the globe delivered fresh to your door."
 			/>
 			<HowItWorks variant="plan" />
+			<PlanAccordion />
 		</main>
 	);
 }
