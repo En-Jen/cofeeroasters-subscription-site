@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components/macro';
 
-import { FONTS, FONT_SIZES } from '../constants';
+import { COLORS, FONTS, FONT_SIZES } from '../constants';
 
 const GlobalStyles = createGlobalStyle`
     /* RESET from https://piccalil.li/blog/a-modern-css-reset */
@@ -70,11 +70,14 @@ const GlobalStyles = createGlobalStyle`
 
     /* GLOBAL STYLES */
     body {
+        background-color: ${COLORS.lightCream[100]};
         font-family: ${FONTS.primary};
         font-size: ${FONT_SIZES.xs};
         line-height: 1.625;
-        max-width: 88%;
+        width: 88%; //6.4% 5.2% 6.25% 
+        max-width: 1440px;
         margin: 0 auto;
+        overflow-x: hidden;
     }
 
     h1, h2, h3, h4, h5, h6 {
