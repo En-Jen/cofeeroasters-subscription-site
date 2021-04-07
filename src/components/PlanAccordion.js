@@ -26,7 +26,7 @@ function PlanAccordion() {
 
 	const renderedOrderOptions = questions.map((item, index) => {
 		return (
-			<OrderItem key={index}>
+			<AccordionItem key={index}>
 				<QuestionWrapper>
 					<Question>
 						<QuestionHeading>{item.question}</QuestionHeading>
@@ -55,7 +55,7 @@ function PlanAccordion() {
 						})}
 					</CardWrapper>
 				</AccordionPanel>
-			</OrderItem>
+			</AccordionItem>
 		);
 	});
 
@@ -66,16 +66,17 @@ function PlanAccordion() {
 	);
 }
 
-const OrderItem = styled(AccordionItem)`
-	/* margin-bottom: 96px; */
-	&[data-reach-accordion-item][data-state='open'] {
-		/* styles for all open accordion items */
-	}
-`;
-
 const QuestionWrapper = styled.h3`
 	width: 100%;
 	margin-bottom: 32px;
+
+	@media ${BREAKPOINTS.tablet} {
+		margin-bottom: 40px;
+	}
+
+	@media ${BREAKPOINTS.desktop} {
+		margin-bottom: 56px;
+	}
 `;
 
 const Question = styled(AccordionButton)`
@@ -93,6 +94,16 @@ const QuestionHeading = styled.div`
 	line-height: 1.17;
 	color: ${COLORS.grey[500]};
 	text-align: left;
+
+	@media ${BREAKPOINTS.tablet} {
+		font-size: ${FONT_SIZES.l};
+		line-height: 1.5;
+	}
+
+	@media ${BREAKPOINTS.desktop} {
+		font-size: ${FONT_SIZES.xl};
+		line-height: 1.2;
+	}
 `;
 
 const ArrowIcon = styled.svg`
@@ -115,6 +126,15 @@ const ArrowIcon = styled.svg`
 const CardWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 96px;
+
+	@media ${BREAKPOINTS.tablet} {
+		flex-direction: row;
+	}
+
+	@media ${BREAKPOINTS.tablet} {
+		margin-bottom: 88px;
+	}
 `;
 
 const Card = styled.button`
@@ -127,12 +147,24 @@ const Card = styled.button`
 	text-align: left;
 	transition: background-color 0.3s ease;
 
-	&:not(:last-of-type) {
-		margin-bottom: 16px;
+	@media ${BREAKPOINTS.tablet} {
+		padding: 32px 28px 84px 28px;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
 	}
 
-	&:last-of-type {
-		margin-bottom: 96px;
+	&:not(:last-of-type) {
+		margin-bottom: 16px;
+
+		@media ${BREAKPOINTS.tablet} {
+			margin-bottom: 0;
+			margin-right: 10px;
+		}
+
+		@media ${BREAKPOINTS.desktop} {
+			margin-right: 23px;
+		}
 	}
 
 	&:hover {
