@@ -15,7 +15,7 @@ function NavLinks({ variant }) {
 	}
 
 	return (
-		<nav>
+		<nav role="navigation">
 			<Component role="list">
 				<ListItem>
 					<Link exact to="/">

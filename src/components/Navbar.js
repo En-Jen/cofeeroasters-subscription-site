@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-// import iconHamburger from '../assets/shared/mobile/icon-hamburger.svg';
-// import iconClose from '../assets/shared/mobile/icon-close.svg';
 import Logo from './Logo';
 import NavLinks from './NavLinks';
+import HamburgerButton from './HamburgerButton';
 
 function Navbar() {
 	return (
 		<Wrapper>
 			<Logo />
-			<NavLinks variant="hamburger" />
+			<NavLinksWrapper>
+				<NavLinks variant="hamburger" />
+			</NavLinksWrapper>
+			<HamburgerButton />
 		</Wrapper>
 	);
 }
@@ -18,6 +20,10 @@ function Navbar() {
 const Wrapper = styled.header`
 	display: flex;
 	justify-content: space-between;
+`;
+
+const NavLinksWrapper = styled.div`
+	display: none;
 `;
 
 export default Navbar;

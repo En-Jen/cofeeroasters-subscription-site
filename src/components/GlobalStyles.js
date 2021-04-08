@@ -87,6 +87,11 @@ const GlobalStyles = createGlobalStyle`
     h1 {
         line-height: 1;
     }
+
+    a:focus, button:focus {
+        outline: 2px dotted ${COLORS.lightCyan};
+        outline-offset: 2px;
+    }
 `;
 
 export default GlobalStyles;
