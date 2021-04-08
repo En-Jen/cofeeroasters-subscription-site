@@ -7,22 +7,28 @@ import bgImageDesktop from '../assets/plan/desktop/bg-order-summary.png';
 
 function OrderSummary({ orderSelections }) {
 	const displaySelection = index => {
-		if (orderSelections[index]) {
-			return orderSelections[index];
-		} else {
-			return '_____';
-		}
+		return orderSelections[index] ? orderSelections[index] : '_____';
 	};
+
+	const isCapsuleSelected = orderSelections[0] === 'Capsule';
 
 	return (
 		<Wrapper>
 			<Heading>Order Summary</Heading>
 			<Summary>
-				“I drink my coffee as <CyanText>{displaySelection(0)}</CyanText>
+				“I drink my coffee {isCapsuleSelected ? 'using' : 'as'}{' '}
+				<CyanText>
+					{isCapsuleSelected ? 'Capsules' : displaySelection(0)}
+				</CyanText>
 				, with a <CyanText>{displaySelection(1)}</CyanText> type of
-				bean. <CyanText>{displaySelection(2)}</CyanText> ground ala{' '}
-				<CyanText>{displaySelection(3)}</CyanText>, sent to me{' '}
-				<CyanText>{displaySelection(4)}</CyanText>.”
+				bean. <CyanText>{displaySelection(2)}</CyanText>
+				{!isCapsuleSelected && (
+					<>
+						{' '}
+						ground ala <CyanText>{displaySelection(3)}</CyanText>
+					</>
+				)}
+				, sent to me <CyanText>{displaySelection(4)}</CyanText>.”
 			</Summary>
 		</Wrapper>
 	);

@@ -37,11 +37,19 @@ function PlanAccordion({ orderSelections, setOrderSelections }) {
 	}
 
 	const renderedOrderOptions = questions.map((item, itemIndex) => {
+		// If Capsule is chosen, disable "Want us to grind them?" question
+		const disabled = orderSelections[0] === 'Capsule' && itemIndex === 3;
 		return (
-			<AccordionItem key={itemIndex} index={itemIndex}>
+			<AccordionItem
+				key={itemIndex}
+				index={itemIndex}
+				disabled={disabled}
+			>
 				<QuestionWrapper>
 					<Question>
-						<QuestionHeading>{item.question}</QuestionHeading>
+						<QuestionHeading disabled={disabled}>
+							{item.question}
+						</QuestionHeading>
 						<ArrowIcon
 							width="19"
 							height="13"
@@ -51,6 +59,7 @@ function PlanAccordion({ orderSelections, setOrderSelections }) {
 								d="M15.949.586l2.828 2.828-9.096 9.096L.586 3.414 3.414.586l6.267 6.267z"
 								fill="#0E8784"
 								fill-rule="nonzero"
+								disabled={disabled}
 							/>
 						</ArrowIcon>
 					</Question>
@@ -67,6 +76,10 @@ function PlanAccordion({ orderSelections, setOrderSelections }) {
 											itemIndex
 										)
 									}
+									selected={
+										orderSelections[itemIndex] ===
+										option.title
+									}
 								>
 									<CardHeading>{option.title}</CardHeading>
 									<p>{option.description}</p>
@@ -80,7 +93,7 @@ function PlanAccordion({ orderSelections, setOrderSelections }) {
 	});
 
 	return (
-		<Accordion index={indices} onChange={toggleItem} multiple>
+		<Accordion index={indices} onChange={toggleItem}>
 			{renderedOrderOptions}
 		</Accordion>
 	);
@@ -112,7 +125,7 @@ const Question = styled(AccordionButton)`
 const QuestionHeading = styled.div`
 	font-size: ${FONT_SIZES.m};
 	line-height: 1.17;
-	color: ${COLORS.grey[500]};
+	color: ${p => (p.disabled ? COLORS.grey[300] : COLORS.grey[500])};
 	text-align: left;
 
 	@media ${BREAKPOINTS.tablet} {
@@ -158,8 +171,9 @@ const CardWrapper = styled.div`
 `;
 
 const Card = styled.button`
-	background-color: ${COLORS.lightCream[300]};
-	color: ${COLORS.grey[700]};
+	background-color: ${p =>
+		p.selected ? COLORS.darkCyan : COLORS.lightCream[300]};
+	color: ${p => (p.selected ? COLORS.white : COLORS.grey[700])};
 	padding: 24px;
 	border: none;
 	border-radius: 8px;
@@ -188,7 +202,8 @@ const Card = styled.button`
 	}
 
 	&:hover {
-		background-color: ${COLORS.paleOrange};
+		background-color: ${p =>
+			p.selected ? COLORS.darkCyan : COLORS.paleOrange};
 	}
 `;
 
