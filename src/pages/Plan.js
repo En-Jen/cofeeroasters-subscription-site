@@ -4,6 +4,7 @@ import Spacer from '../components/Spacer';
 import Hero from '../components/Hero';
 import HowItWorks from '../components/HowItWorks';
 import PlanAccordion from '../components/PlanAccordion';
+import OrderSummary from '../components/OrderSummary';
 
 function Plan() {
 	return (
@@ -18,6 +19,7 @@ function Plan() {
 			<HowItWorks variant="plan" />
 			<Spacer size={120} tabletAndUp={144} desktopAndUp={168} />
 			<PlanAccordion />
+			<OrderSummary />
 		</main>
 	);
 }
