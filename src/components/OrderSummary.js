@@ -1,19 +1,28 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS, FONTS, FONT_SIZES, WEIGHTS } from '../constants';
+import { COLORS, FONTS, FONT_SIZES, WEIGHTS, BREAKPOINTS } from '../constants';
 import bgImageMobile from '../assets/plan/mobile/bg-order-summary.png';
 import bgImageDesktop from '../assets/plan/desktop/bg-order-summary.png';
 
-function OrderSummary() {
+function OrderSummary({ orderSelections }) {
+	const displaySelection = index => {
+		if (orderSelections[index]) {
+			return orderSelections[index];
+		} else {
+			return '_____';
+		}
+	};
+
 	return (
 		<Wrapper>
 			<Heading>Order Summary</Heading>
 			<Summary>
-				“I drink my coffee as <CyanText>_____</CyanText>, with a{' '}
-				<CyanText>_____</CyanText> type of bean.{' '}
-				<CyanText>_____</CyanText> ground ala <CyanText>_____</CyanText>
-				, sent to me <CyanText>_____</CyanText>.”
+				“I drink my coffee as <CyanText>{displaySelection(0)}</CyanText>
+				, with a <CyanText>{displaySelection(1)}</CyanText> type of
+				bean. <CyanText>{displaySelection(2)}</CyanText> ground ala{' '}
+				<CyanText>{displaySelection(3)}</CyanText>, sent to me{' '}
+				<CyanText>{displaySelection(4)}</CyanText>.”
 			</Summary>
 		</Wrapper>
 	);
@@ -25,6 +34,15 @@ const Wrapper = styled.section`
 	border-radius: 10px;
 	padding: 32px 24px;
 	color: ${COLORS.white};
+
+	@media ${BREAKPOINTS.tablet} {
+		padding: 27px 44px;
+	}
+
+	@media ${BREAKPOINTS.laptop} {
+		padding: 27px 64px;
+		background-image: url(${bgImageDesktop});
+	}
 `;
 
 const Heading = styled.h5`

@@ -2,21 +2,26 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import { COLORS, BREAKPOINTS } from '../constants';
-import Logo from '../components/Logo';
-import NavLinks from '../components/NavLinks';
-import SocialIcons from '../components/SocialIcons';
-import Spacer from '../components/Spacer';
+import Logo from './Logo';
+import NavLinks from './NavLinks';
+import SocialIcons from './SocialIcons';
+import Spacer from './Spacer';
 
 function Footer() {
 	return (
 		<Wrapper>
 			<Logo fill={`${COLORS.white}`} />
-			<Spacer size={48} tabletAndUp={32} laptopAndUp={0} desktopAndUp={102} />
+			<Spacer
+				size={48}
+				tabletAndUp={32}
+				laptopAndUp={0}
+				desktopAndUp={102}
+			/>
 			<NavLinks />
 			<Spacer size={48} tabletAndUp={65} laptopAndUp={0} />
-            <SocialIconsWrapper>
-			    <SocialIcons />
-            </SocialIconsWrapper>
+			<SocialIconsWrapper>
+				<SocialIcons />
+			</SocialIconsWrapper>
 		</Wrapper>
 	);
 }
@@ -32,18 +37,18 @@ const Wrapper = styled.footer`
 	@media ${BREAKPOINTS.laptop} {
 		flex-direction: row;
 		padding: 47px 85px;
-        justify-content: space-between;
+		justify-content: space-between;
 	}
 
-    @media ${BREAKPOINTS.desktop} {
-        justify-content: flex-start;
-        padding: 9px 85px
+	@media ${BREAKPOINTS.desktop} {
+		justify-content: flex-start;
+		padding: 9px 85px;
 	}
 `;
 
 const SocialIconsWrapper = styled.div`
-    @media ${BREAKPOINTS.desktop} {
-        margin-left: auto;
+	@media ${BREAKPOINTS.desktop} {
+		margin-left: auto;
 	}
 `;
 

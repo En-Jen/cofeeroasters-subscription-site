@@ -11,7 +11,8 @@ import '@reach/accordion/styles.css';
 import { questions } from '../data';
 import { COLORS, FONT_SIZES, BREAKPOINTS } from '../constants';
 
-function PlanAccordion() {
+function PlanAccordion({ orderSelections, setOrderSelections }) {
+	// Array with indices of open AccordionItems
 	const [indices, setIndices] = React.useState([0]);
 
 	function toggleItem(toggledIndex) {
@@ -24,9 +25,20 @@ function PlanAccordion() {
 		}
 	}
 
-	const renderedOrderOptions = questions.map((item, index) => {
+	function handleOrderSelection(selection, i) {
+		const newSelections = orderSelections.map((item, index) => {
+			if (index === i) {
+				return selection;
+			}
+			return item;
+		});
+
+		setOrderSelections(newSelections);
+	}
+
+	const renderedOrderOptions = questions.map((item, itemIndex) => {
 		return (
-			<AccordionItem key={index}>
+			<AccordionItem key={itemIndex} index={itemIndex}>
 				<QuestionWrapper>
 					<Question>
 						<QuestionHeading>{item.question}</QuestionHeading>
@@ -45,9 +57,17 @@ function PlanAccordion() {
 				</QuestionWrapper>
 				<AccordionPanel>
 					<CardWrapper>
-						{item.answers.map((option, index) => {
+						{item.answers.map((option, optionIndex) => {
 							return (
-								<Card key={index}>
+								<Card
+									key={optionIndex}
+									onClick={() =>
+										handleOrderSelection(
+											option.title,
+											itemIndex
+										)
+									}
+								>
 									<CardHeading>{option.title}</CardHeading>
 									<p>{option.description}</p>
 								</Card>

@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import HowItWorks from '../components/HowItWorks';
 import PlanAccordion from '../components/PlanAccordion';
 import OrderSummary from '../components/OrderSummary';
+import OrderForm from '../components/OrderForm';
 
 function Plan() {
 	return (
@@ -18,8 +19,10 @@ function Plan() {
 			<Spacer size={120} tabletAndUp={144} desktopAndUp={168} />
 			<HowItWorks variant="plan" />
 			<Spacer size={120} tabletAndUp={144} desktopAndUp={168} />
-			<PlanAccordion />
-			<OrderSummary />
+			{/* <PlanAccordion />
+			<Spacer size={120} tabletAndUp={144} desktopAndUp={88} />
+			<OrderSummary /> */}
+			<OrderForm />
 		</main>
 	);
 }
