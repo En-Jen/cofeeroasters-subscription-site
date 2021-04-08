@@ -25,15 +25,19 @@ function PlanAccordion({ orderSelections, setOrderSelections }) {
 		}
 	}
 
-	function handleOrderSelection(selection, i) {
-		const newSelections = orderSelections.map((item, index) => {
-			if (index === i) {
+	function handleOrderSelection(selection, itemIndex, optionIndex) {
+		const newSelections = orderSelections.map((item, i) => {
+			if (i === itemIndex) {
 				return selection;
 			}
 			return item;
 		});
-
 		setOrderSelections(newSelections);
+
+		// Close Accordion panel for "Want us to grind them?" if "Capsule" is selected
+		if (itemIndex === 0 && optionIndex === 0 && indices.includes(3)) {
+			setIndices(indices.filter(currentIndex => currentIndex !== 3));
+		}
 	}
 
 	const renderedOrderOptions = questions.map((item, itemIndex) => {
@@ -73,7 +77,8 @@ function PlanAccordion({ orderSelections, setOrderSelections }) {
 									onClick={() =>
 										handleOrderSelection(
 											option.title,
-											itemIndex
+											itemIndex,
+											optionIndex
 										)
 									}
 									selected={
