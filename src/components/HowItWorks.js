@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import { COLORS, FONT_SIZES, BREAKPOINTS } from '../constants';
+import bgImageDesktop from '../assets/plan/desktop/bg-steps.png';
+import bgImageTablet from '../assets/plan/tablet/bg-steps.png';
+import bgImageMobile from '../assets/plan/mobile/bg-steps.png';
 
 function HowItWorks({ variant, children }) {
 	let Component;
@@ -76,7 +79,8 @@ const HomeHowItWorks = styled(BaseHowItWorks)`
 `;
 
 const PlanHowItWorks = styled(BaseHowItWorks)`
-	background-color: ${COLORS.grey[900]};
+	background-image: url(${bgImageMobile});
+	background-size: cover;
 	border-radius: 10px;
 	/* TODO: IMPLEMENT BETTER SOLUTION!!!!!! */
 	/* Stretch width to edge of viewport */
@@ -84,9 +88,14 @@ const PlanHowItWorks = styled(BaseHowItWorks)`
 	margin-right: -6.9%;
 	padding: 80px 6.9%;
 
+	@media ${BREAKPOINTS.tablet} {
+		background-image: url(${bgImageTablet});
+	}
+
 	@media ${BREAKPOINTS.laptop} {
 		margin: auto;
 		padding: 96px 58px;
+		background-image: url(${bgImageDesktop});
 	}
 
 	@media ${BREAKPOINTS.desktop} {
