@@ -3,6 +3,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Spacer from '../components/Spacer';
 import Commitment from '../components/Commitment';
+import Quality from '../components/Quality';
 
 function About() {
 	return (
@@ -16,6 +17,13 @@ function About() {
 			/>
 			<Spacer size={120} tabletAndUp={144} desktopAndUp={168} />
 			<Commitment />
+			<Spacer
+				size={200}
+				mobileAndUp={250}
+				tabletAndUp={340}
+				laptopAndUp={256}
+			/>
+			<Quality />
 		</main>
 	);
 }

@@ -82,6 +82,11 @@ const Heading = styled.h2`
 	font-size: ${FONT_SIZES.l};
 	line-height: 1.5;
 	margin-bottom: 30px;
+
+    @media ${BREAKPOINTS.desktop} {
+        font-size: ${FONT_SIZES.xl};
+        line-height: 1.2;
+    }
 `;
 
 const Paragraph = styled.p`

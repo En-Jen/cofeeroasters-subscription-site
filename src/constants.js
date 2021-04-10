@@ -39,7 +39,7 @@ export const FONT_SIZES = {
 // Media queries
 export const BREAKPOINT_SIZES = {
 	mobileSmall: 320,
-	mobile: 480,
+	mobile: 540,
 	tablet: 768,
 	laptop: 1024,
 	desktop: 1200,
