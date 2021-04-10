@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import Spacer from '../components/Spacer';
 import Commitment from '../components/Commitment';
 import Quality from '../components/Quality';
+import Headquarters from '../components/Headquarters';
 
 function About() {
 	return (
@@ -24,6 +25,8 @@ function About() {
 				laptopAndUp={256}
 			/>
 			<Quality />
+			<Spacer size={120} tabletAndUp={144} desktopAndUp={168} />
+			<Headquarters />
 		</main>
 	);
 }

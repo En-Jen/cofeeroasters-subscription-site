@@ -9,6 +9,7 @@ import imgCommitmentMobile from '../assets/about/mobile/image-commitment.jpg';
 function Commitment() {
 	return (
 		<Wrapper>
+			{/* TODO: ADD PICTURE ELEMENT WITH MEDIA ATTRIBUTES!!!! */}
 			<Image
 				src={imgCommitmentTablet}
 				srcSet={`${imgCommitmentMobile} 654w,
@@ -65,7 +66,7 @@ const Image = styled.img`
 	@media ${BREAKPOINTS.desktop} {
 		margin-bottom: 0;
 		margin-right: 125px;
-        width: 40.5%;
+		width: 40.5%;
 	}
 `;
 
@@ -83,10 +84,10 @@ const Heading = styled.h2`
 	line-height: 1.5;
 	margin-bottom: 30px;
 
-    @media ${BREAKPOINTS.desktop} {
-        font-size: ${FONT_SIZES.xl};
-        line-height: 1.2;
-    }
+	@media ${BREAKPOINTS.desktop} {
+		font-size: ${FONT_SIZES.xl};
+		line-height: 1.2;
+	}
 `;
 
 const Paragraph = styled.p`
