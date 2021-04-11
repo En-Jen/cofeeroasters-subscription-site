@@ -1,6 +1,67 @@
+import granEspressoImg from './assets/home/desktop/image-gran-espresso.png';
+import planaltoImg from './assets/home/desktop/image-planalto.png';
+import piccolloImg from './assets/home/desktop/image-piccollo.png';
+import dancheImg from './assets/home/desktop/image-danche.png';
 import ukIcon from './assets/about/desktop/illustration-uk.svg';
 import canadaIcon from './assets/about/desktop/illustration-canada.svg';
 import australiaIcon from './assets/about/desktop/illustration-australia.svg';
+
+export const collection = [
+	{
+		image: granEspressoImg,
+		heading: 'Gran Espresso',
+		description: 'Light and flavorful blend with cocoa and black pepper for an intense experience'
+	},
+	{
+		image: planaltoImg,
+		heading: 'Planalto',
+		description: 'Brazilian dark roast with rich and velvety body, and hints of fruits and nuts'
+	},
+	{
+		image: piccolloImg,
+		heading: 'Piccollo',
+		description: 'Mild and smooth blend featuring notes of toasted almond and dried cherry'
+	},
+	{
+		image: dancheImg,
+		heading: 'Danche',
+		description: 'Ethiopian hand-harvested blend densely packed with vibrant fruit notes'
+	},
+
+];
+
+export const headquarters = [
+	{
+		icon: ukIcon,
+		location: 'United Kingdom',
+		information: {
+			street: '68 Ashfordby Rd',
+			city: 'Alcaston',
+			state: 'SY6 1YA',
+			phone: '+44 1241 918425',
+		},
+	},
+	{
+		icon: canadaIcon,
+		location: 'Canada',
+		information: {
+			street: '1529 Eglington Avenue',
+			city: 'Toronto',
+			state: 'Ontario M4P 1A6',
+			phone: '+1 416 485 2997',
+		},
+	},
+	{
+		icon: australiaIcon,
+		location: 'Australia',
+		information: {
+			street: '36 Swanston Street',
+			city: 'Kewell',
+			state: 'Victoria',
+			phone: '+61 4 9928 3629',
+		},
+	},
+];
 
 export const questions = [
 	{
@@ -107,38 +168,5 @@ export const questions = [
 			},
 		],
 		answer: '',
-	},
-];
-
-export const headquarters = [
-	{
-		icon: ukIcon,
-		location: 'United Kingdom',
-		information: {
-			street: '68 Ashfordby Rd',
-			city: 'Alcaston',
-			state: 'SY6 1YA',
-			phone: '+44 1241 918425',
-		},
-	},
-	{
-		icon: canadaIcon,
-		location: 'Canada',
-		information: {
-			street: '1529 Eglington Avenue',
-			city: 'Toronto',
-			state: 'Ontario M4P 1A6',
-			phone: '+1 416 485 2997',
-		},
-	},
-	{
-		icon: australiaIcon,
-		location: 'Australia',
-		information: {
-			street: '36 Swanston Street',
-			city: 'Kewell',
-			state: 'Victoria',
-			phone: '+61 4 9928 3629',
-		},
 	},
 ];

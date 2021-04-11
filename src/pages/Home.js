@@ -3,6 +3,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Spacer from '../components/Spacer';
 import Button from '../components/Button';
+import Collection from '../components/Collection';
 import HowItWorks from '../components/HowItWorks';
 
 function Home(props) {
@@ -19,6 +20,7 @@ function Home(props) {
 					Create your plan
 				</Button>
 			</Hero>
+			<Collection />
 			<HowItWorks variant="home">
 				<Spacer size={79} tabletAndUp={44} desktopAndUp={64} />
 				<Button onClick={() => props.history.push('/plan')}>
