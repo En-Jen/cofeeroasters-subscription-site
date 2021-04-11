@@ -10,11 +10,12 @@ function Collection() {
 			<div>
 				{collection.map((item, i) => (
 					<Card
-                        variant="collection"
+						key={i}
+						variant="collection"
 						img={item.image}
 						alt={`${item.heading} coffee bag`}
 						heading={item.heading}
-                        description={item.description}
+						description={item.description}
 					/>
 				))}
 			</div>

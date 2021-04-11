@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import Spacer from '../components/Spacer';
 import Button from '../components/Button';
 import Collection from '../components/Collection';
+import WhyChoose from '../components/WhyChoose';
 import HowItWorks from '../components/HowItWorks';
 
 function Home(props) {
@@ -20,13 +21,18 @@ function Home(props) {
 					Create your plan
 				</Button>
 			</Hero>
+			<Spacer size={120} tabletAndUp={144} desktopAndUp={136} />
 			<Collection />
+			<Spacer size={120} tabletAndUp={144} desktopAndUp={200} />
+			<WhyChoose />
+			<Spacer size={120} tabletAndUp={144} desktopAndUp={200} />
 			<HowItWorks variant="home">
 				<Spacer size={79} tabletAndUp={44} desktopAndUp={64} />
 				<Button onClick={() => props.history.push('/plan')}>
 					Create your plan
 				</Button>
 			</HowItWorks>
+			<Spacer size={120} tabletAndUp={144} desktopAndUp={200} />
 		</main>
 	);
 }
