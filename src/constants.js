@@ -9,7 +9,7 @@ export const COLORS = {
 	grey: {
 		300: 'hsl(25deg, 11%, 87%)', //Disabled btn background-color
 		500: 'hsl(215deg, 5%, 54%)',
-		700: 'hsl(215deg, 19%, 25%)',
+		700: 'hsl(215deg, 20%, 25%)',
 		900: 'hsl(216deg, 17%, 21%)',
 	},
 	white: 'hsl(0deg, 0%, 100%)',

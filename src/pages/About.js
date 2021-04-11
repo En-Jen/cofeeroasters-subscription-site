@@ -27,6 +27,7 @@ function About() {
 			<Quality />
 			<Spacer size={120} tabletAndUp={144} desktopAndUp={168} />
 			<Headquarters />
+			<Spacer size={120} tabletAndUp={144} desktopAndUp={168} />
 		</main>
 	);
 }
