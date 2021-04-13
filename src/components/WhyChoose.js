@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components/macro';
 
 import { whyChoose } from '../data';
 import Card from './Card';
@@ -6,7 +7,7 @@ import Card from './Card';
 function Collection() {
 	return (
 		<section>
-			<h2>Why choose us?</h2>
+			<Heading>Why choose us?</Heading>
 			<p>
 				A large part of our role is choosing which particular coffees
 				will be featured in our range. This means working closely with
@@ -16,7 +17,7 @@ function Collection() {
 			<div>
 				{whyChoose.map((item, i) => (
 					<Card
-                        key={i}
+						key={i}
 						variant="choose"
 						img={item.image}
 						alt={item.alt}
@@ -28,5 +29,9 @@ function Collection() {
 		</section>
 	);
 }
+
+const Heading = styled.h2`
+	
+`;
 
 export default Collection;
