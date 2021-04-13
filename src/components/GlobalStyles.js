@@ -74,14 +74,19 @@ const GlobalStyles = createGlobalStyle`
         font-family: ${FONTS.primary};
         font-size: 15px;
         line-height: 1.67;
-        width: 88%; //6.4% 5.2% 6.25% 
+        width: 88%;
         max-width: 1440px;
         margin: 0 auto;
+        margin-bottom: 72px;
         overflow-x: hidden;
 
         @media ${BREAKPOINTS.laptop} {
             font-size: ${FONT_SIZES.xs};
             line-height: 1.625;
+        }
+
+        @media ${BREAKPOINTS.desktop} {
+            margin-bottom: 77px;
         }
     }
 
