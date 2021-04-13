@@ -45,11 +45,13 @@ const Heading = styled.h2`
 		hsl(0deg, 0%, 59%, 0.6),
 		hsl(0deg, 0%, 59%, 0.01)
 	);
+	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
-	margin-bottom: 13px;
+	margin-bottom: 32px;
 	font-size: ${FONT_SIZES.m};
 	font-size: 9vw;
+	line-height: .8;
 
 	@media (min-width: 375px) {
 		font-size: ${FONT_SIZES.xl};
@@ -60,7 +62,7 @@ const Heading = styled.h2`
 		font-size: 6rem;
 		font-size: 12.5vw;
 		margin-bottom: 0;
-		transform: translateY(40%);
+		transform: translateY(37%);
 		position: relative;
 		z-index: -1;
 	}

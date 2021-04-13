@@ -25,41 +25,57 @@ function Card({ variant, img, alt, heading, description }) {
 
 const BaseCard = styled.div`
 	text-align: center;
-    display: grid;
+	display: grid;
 
-    @media ${BREAKPOINTS.tablet} {
-        grid-template-columns: repeat(2, auto);
-        text-align: left;
-        align-items: center;
-    }
+	@media ${BREAKPOINTS.tablet} {
+		text-align: left;
+	}
 
-    @media ${BREAKPOINTS.laptop} {
-        grid-template-columns: revert;
-        text-align: center;
-    }
+	@media ${BREAKPOINTS.laptop} {
+		text-align: center;
+	}
 `;
 
 const CollectionCard = styled(BaseCard)`
 	color: ${COLORS.grey[700]};
-    gap: 24px;
+	gap: 24px;
 
-    @media ${BREAKPOINTS.tablet} {
-        gap: 36px;
-    }
+	@media ${BREAKPOINTS.tablet} {
+		grid-template-columns: 256px auto;
+		gap: 36px;
+        align-items: center;
+	}
+
+    @media ${BREAKPOINTS.laptop} {
+		grid-template-columns: auto;
+	}
 `;
 
 const ChooseCard = styled(BaseCard)`
-    gap: 56px;
+	gap: 56px;
 	color: ${COLORS.lightCream[100]};
 	background-color: ${COLORS.darkCyan};
 	border-radius: 8px;
-	padding: 72px 12px 48px;
+	padding: 72px 32px 48px;
 	font-size: ${FONT_SIZES.xs};
 	line-height: 1.625;
 
-    @media ${BREAKPOINTS.tablet} {
-        gap: 56px;
-    }
+	@media ${BREAKPOINTS.tablet} {
+		grid-template-columns: 56px auto;
+		gap: 56px;
+		padding: 41px 24px 41px 70px;
+	}
+
+    @media ${BREAKPOINTS.laptop} {
+		grid-template-columns: auto;
+        grid-template-rows: 72px auto;
+        padding: 32px;
+	}
+
+    @media ${BREAKPOINTS.laptop} {
+        padding: 48px;
+        padding-top: 72px;
+	}
 `;
 
 const Image = styled.img`
@@ -67,13 +83,11 @@ const Image = styled.img`
 
 	${CollectionCard} & {
 		width: 200px;
-	}
 
-    @media ${BREAKPOINTS.tablet} {
-        ${CollectionCard} & {
-            width: 256px;
-        }
-    }
+		@media ${BREAKPOINTS.tablet} {
+			width: 256px;
+		}
+	}
 `;
 
 const Heading = styled.h3`
@@ -86,6 +100,10 @@ const Heading = styled.h3`
 
 	${ChooseCard} & {
 		margin-bottom: 24px;
+
+		@media ${BREAKPOINTS.tablet} {
+			margin-bottom: 16px;
+		}
 	}
 `;
 
