@@ -9,17 +9,18 @@ import imgCommitmentMobile from '../assets/about/mobile/image-commitment.jpg';
 function Commitment() {
 	return (
 		<Wrapper>
-			{/* TODO: ADD PICTURE ELEMENT WITH MEDIA ATTRIBUTES!!!! */}
-			<Image
-				src={imgCommitmentTablet}
-				srcSet={`${imgCommitmentMobile} 654w,
-                        ${imgCommitmentTablet} 281w,
-                        ${imgCommitmentDesktop} 445w`}
-				sizes="(min-width: 768px) 36.5vw,
-                        (min-width: 1024px) 30.9vw,
-                        88vw"
-				alt="Barista"
-			/>
+			<Picture>
+				<source
+					media="(min-width: 1024px)"
+					srcSet={`${imgCommitmentDesktop} 445w`}
+				/>
+				<source
+					media="(min-width: 768px)"
+					srcSet={`${imgCommitmentTablet} 281w`}
+				/>
+				<source srcSet={`${imgCommitmentMobile} 654w`} />
+				<Image src={imgCommitmentMobile} alt="Barista" />
+			</Picture>
 			<ContentWrapper>
 				<Heading>Our commitment</Heading>
 				<Paragraph>
@@ -53,21 +54,27 @@ const Wrapper = styled.section`
 	}
 `;
 
-const Image = styled.img`
-	border-radius: 8px;
+const Picture = styled.picture`
 	margin-bottom: 48px;
 	height: auto;
 
 	@media ${BREAKPOINTS.tablet} {
 		margin-bottom: 0;
 		margin-right: 69px;
+		flex-basis: 281px;
+	}
+
+	@media ${BREAKPOINTS.laptop} {
+		flex-basis: 445px;
 	}
 
 	@media ${BREAKPOINTS.desktop} {
-		margin-bottom: 0;
 		margin-right: 125px;
-		width: 40.5%;
 	}
+`;
+
+const Image = styled.img`
+	border-radius: 8px;
 `;
 
 const ContentWrapper = styled.div`
@@ -76,6 +83,7 @@ const ContentWrapper = styled.div`
 
 	@media ${BREAKPOINTS.tablet} {
 		text-align: left;
+		flex: 1;
 	}
 `;
 
