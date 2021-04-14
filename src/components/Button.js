@@ -3,9 +3,9 @@ import styled from 'styled-components/macro';
 
 import { COLORS, FONTS, FONT_SIZES, WEIGHTS } from '../constants';
 
-function Button({ disabled, onClick, children }) {
+function Button({ disabled, width, onClick, children }) {
 	return (
-		<Wrapper disabled={disabled} onClick={onClick}>
+		<Wrapper disabled={disabled} width={width} onClick={onClick}>
 			{children}
 		</Wrapper>
 	);
@@ -21,6 +21,7 @@ const Wrapper = styled.button`
 	border: none;
 	border-radius: 6px;
 	padding: 16px 32px;
+	width: ${p => (p.width ? `${p.width}px` : 'auto')};
 	transition: background-color 0.2s ease-in-out;
 
 	&:hover {
