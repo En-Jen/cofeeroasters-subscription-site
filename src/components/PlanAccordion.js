@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components/macro';
 import {
 	Accordion,
@@ -15,33 +15,9 @@ function PlanAccordion({
 	orderSelections,
 	setOrderSelections,
 	pricePerShipment,
-	setPricePerShipment,
 }) {
 	// Array with indices of open AccordionItems
 	const [indices, setIndices] = React.useState([0]);
-
-	// Get price per shipment and update state when orderSelections changes
-	useEffect(() => {
-		if (orderSelections[2] === '250g') {
-			setPricePerShipment({
-				weekly: 7.2,
-				biweekly: 9.6,
-				monthly: 12.0,
-			});
-		} else if (orderSelections[2] === '500g') {
-			setPricePerShipment({
-				weekly: 13.0,
-				biweekly: 17.5,
-				monthly: 22.0,
-			});
-		} else if (orderSelections[2] === '1000g') {
-			setPricePerShipment({
-				weekly: 22.0,
-				biweekly: 32.0,
-				monthly: 42.0,
-			});
-		}
-	}, [orderSelections]);
 
 	// Toggle which accordion questions are set to open
 	function toggleItem(toggledIndex) {
@@ -120,8 +96,8 @@ function PlanAccordion({
 									<p>
 										{itemIndex === 4
 											? `$${pricePerShipment[
-												frequency
-											].toFixed(2)} ${description}`
+													frequency
+											  ].toFixed(2)} ${description}`
 											: description}
 									</p>
 								</Card>
