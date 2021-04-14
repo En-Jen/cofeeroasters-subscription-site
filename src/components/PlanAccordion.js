@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components/macro';
 import {
 	Accordion,
@@ -11,10 +11,39 @@ import '@reach/accordion/styles.css';
 import { questions } from '../data';
 import { COLORS, FONT_SIZES, BREAKPOINTS } from '../constants';
 
-function PlanAccordion({ orderSelections, setOrderSelections }) {
+function PlanAccordion({
+	orderSelections,
+	setOrderSelections,
+	pricePerShipment,
+	setPricePerShipment,
+}) {
 	// Array with indices of open AccordionItems
 	const [indices, setIndices] = React.useState([0]);
 
+	// Get price per shipment and update state when orderSelections changes
+	useEffect(() => {
+		if (orderSelections[2] === '250g') {
+			setPricePerShipment({
+				weekly: 7.2,
+				biweekly: 9.6,
+				monthly: 12.0,
+			});
+		} else if (orderSelections[2] === '500g') {
+			setPricePerShipment({
+				weekly: 13.0,
+				biweekly: 17.5,
+				monthly: 22.0,
+			});
+		} else if (orderSelections[2] === '1000g') {
+			setPricePerShipment({
+				weekly: 22.0,
+				biweekly: 32.0,
+				monthly: 42.0,
+			});
+		}
+	}, [orderSelections]);
+
+	// Toggle which accordion questions are set to open
 	function toggleItem(toggledIndex) {
 		if (indices.includes(toggledIndex)) {
 			setIndices(
@@ -71,23 +100,30 @@ function PlanAccordion({ orderSelections, setOrderSelections }) {
 				<AccordionPanel>
 					<CardWrapper>
 						{item.answers.map((option, optionIndex) => {
+							const { title, frequency, description } = option;
 							return (
 								<Card
 									key={optionIndex}
 									onClick={() =>
 										handleOrderSelection(
-											option.title,
+											title,
 											itemIndex,
 											optionIndex
 										)
 									}
 									selected={
-										orderSelections[itemIndex] ===
-										option.title
+										orderSelections[itemIndex] === title
 									}
 								>
-									<CardHeading>{option.title}</CardHeading>
-									<p>{option.description}</p>
+									<CardHeading>{title}</CardHeading>
+									{/* Access price per shipment if it is the last question */}
+									<p>
+										{itemIndex === 4
+											? `$${pricePerShipment[
+												frequency
+											].toFixed(2)} ${description}`
+											: description}
+									</p>
 								</Card>
 							);
 						})}

@@ -12,7 +12,7 @@ function Modal({ showDialog, setShowDialog, orderSelections }) {
 
 	return (
 		<ModalOverlay isOpen={showDialog} onDismiss={close}>
-			<ModalContent>
+			<ModalContent aria-label="Order Summary">
 				<HeadingWrapper>
 					<Heading>Order Summary</Heading>
 				</HeadingWrapper>

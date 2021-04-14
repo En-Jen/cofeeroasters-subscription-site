@@ -95,6 +95,7 @@ export const headquarters = [
 
 export const questions = [
 	{
+		id: 0,
 		question: 'How do you drink your coffee?',
 		answers: [
 			{
@@ -116,6 +117,7 @@ export const questions = [
 		answer: '',
 	},
 	{
+		id: 1,
 		question: 'What type of coffee?',
 		answers: [
 			{
@@ -137,6 +139,7 @@ export const questions = [
 		answer: '',
 	},
 	{
+		id: 2,
 		question: 'How much would you like?',
 		answers: [
 			{
@@ -158,6 +161,7 @@ export const questions = [
 		answer: '',
 	},
 	{
+		id: 3,
 		question: 'Want us to grind them?',
 		answers: [
 			{
@@ -179,22 +183,26 @@ export const questions = [
 		answer: '',
 	},
 	{
+		id: 4,
 		question: 'How often should we deliver?',
 		answers: [
 			{
 				title: 'Every week',
+				frequency: 'weekly',
 				description:
-					'$7.20 per shipment. Includes free first-class shipping.',
+					'per shipment. Includes free first-class shipping.',
 			},
 			{
 				title: 'Every 2 weeks',
+				frequency: 'biweekly',
 				description:
-					'$9.60 per shipment. Includes free priority shipping.',
+					'per shipment. Includes free priority shipping.',
 			},
 			{
 				title: 'Every month',
+				frequency: 'monthly',
 				description:
-					'$12.00 per shipment. Includes free priority shipping.',
+					'per shipment. Includes free priority shipping.',
 			},
 		],
 		answer: '',

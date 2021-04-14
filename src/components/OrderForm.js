@@ -10,6 +10,11 @@ import Modal from './Modal';
 
 function OrderForm() {
 	const [orderSelections, setOrderSelections] = useState(Array(5).fill(null));
+	const [pricePerShipment, setPricePerShipment] = React.useState({
+		weekly: 7.20,
+		biweekly: 9.60,
+		monthly: 12.00,
+	});
 	const [showDialog, setShowDialog] = useState(false);
 
 	const open = () => setShowDialog(true);
@@ -33,20 +38,26 @@ function OrderForm() {
 			<PlanAccordion
 				orderSelections={orderSelections}
 				setOrderSelections={setOrderSelections}
+				pricePerShipment={pricePerShipment}
+				setPricePerShipment={setPricePerShipment}
 			/>
 			<Spacer size={120} tabletAndUp={144} desktopAndUp={88} />
 			<OrderSummary orderSelections={orderSelections} />
 			<Spacer size={56} tabletAndUp={40} />
 			<ButtonWrapper>
-				<Button 
+				<Button
 					onClick={open}
-					// disabled={!isFormComplete()}
+					disabled={!isFormComplete()}
 				>
 					Create my plan!
 				</Button>
 			</ButtonWrapper>
 
-			<Modal showDialog={showDialog} setShowDialog={setShowDialog} orderSelections={orderSelections} />
+			<Modal
+				showDialog={showDialog}
+				setShowDialog={setShowDialog}
+				orderSelections={orderSelections}
+			/>
 		</section>
 	);
 }
