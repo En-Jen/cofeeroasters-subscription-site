@@ -6,9 +6,13 @@ import PlanAccordion from './PlanAccordion';
 import Spacer from './Spacer';
 import OrderSummary from './OrderSummary';
 import Button from './Button';
+import Modal from './Modal';
 
 function OrderForm() {
 	const [orderSelections, setOrderSelections] = useState(Array(5).fill(null));
+	const [showDialog, setShowDialog] = useState(false);
+
+	const open = () => setShowDialog(true);
 
 	// Check if order form is complete
 	const isFormComplete = () => {
@@ -34,8 +38,15 @@ function OrderForm() {
 			<OrderSummary orderSelections={orderSelections} />
 			<Spacer size={56} tabletAndUp={40} />
 			<ButtonWrapper>
-				<Button disabled={!isFormComplete()}>Create my plan!</Button>
+				<Button 
+					onClick={open}
+					disabled={!isFormComplete()}
+				>
+					Create my plan!
+				</Button>
 			</ButtonWrapper>
+
+			<Modal showDialog={showDialog} setShowDialog={setShowDialog} orderSelections={orderSelections} />
 		</section>
 	);
 }
