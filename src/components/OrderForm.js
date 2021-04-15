@@ -19,6 +19,7 @@ function OrderForm() {
 	const [pricePerMonth, setPricePerMonth] = useState(null);
 	const [showDialog, setShowDialog] = useState(false);
 	const [isFormComplete, setIsFormComplete] = useState(false);
+	const [activeQuestion, setActiveQuestion] = useState(0);
 
 	// Get price per shipment and update state when orderSelections changes
 	useEffect(() => {
@@ -76,7 +77,10 @@ function OrderForm() {
 
 	return (
 		<Wrapper>
-			<Sidebar />
+			<Sidebar
+				activeQuestion={activeQuestion}
+				setActiveQuestion={setActiveQuestion}
+			/>
 			<div>
 				<PlanAccordion
 					orderSelections={orderSelections}
