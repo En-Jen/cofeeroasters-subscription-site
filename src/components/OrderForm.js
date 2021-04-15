@@ -7,6 +7,7 @@ import Spacer from './Spacer';
 import OrderSummary from './OrderSummary';
 import Button from './Button';
 import Modal from './Modal';
+import Sidebar from './Sidebar';
 
 function OrderForm() {
 	const [orderSelections, setOrderSelections] = useState(Array(5).fill(null));
@@ -74,20 +75,23 @@ function OrderForm() {
 	const open = () => setShowDialog(true);
 
 	return (
-		<section>
-			<PlanAccordion
-				orderSelections={orderSelections}
-				setOrderSelections={setOrderSelections}
-				pricePerShipment={pricePerShipment}
-			/>
-			<Spacer size={120} tabletAndUp={144} desktopAndUp={88} />
-			<OrderSummary orderSelections={orderSelections} />
-			<Spacer size={56} tabletAndUp={40} />
-			<ButtonWrapper>
-				<Button onClick={open} disabled={!isFormComplete}>
-					Create my plan!
-				</Button>
-			</ButtonWrapper>
+		<Wrapper>
+			<Sidebar />
+			<div>
+				<PlanAccordion
+					orderSelections={orderSelections}
+					setOrderSelections={setOrderSelections}
+					pricePerShipment={pricePerShipment}
+				/>
+				<Spacer size={120} tabletAndUp={144} desktopAndUp={88} />
+				<OrderSummary orderSelections={orderSelections} />
+				<Spacer size={56} tabletAndUp={40} />
+				<ButtonWrapper>
+					<Button onClick={open} disabled={!isFormComplete}>
+						Create my plan!
+					</Button>
+				</ButtonWrapper>
+			</div>
 
 			<Modal
 				showDialog={showDialog}
@@ -95,9 +99,15 @@ function OrderForm() {
 				orderSelections={orderSelections}
 				pricePerMonth={pricePerMonth}
 			/>
-		</section>
+		</Wrapper>
 	);
 }
+
+const Wrapper = styled.section`
+	@media ${BREAKPOINTS.laptop} {
+		display: flex;
+	}
+`;
 
 const ButtonWrapper = styled.div`
 	text-align: center;

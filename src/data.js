@@ -95,7 +95,7 @@ export const headquarters = [
 
 export const questions = [
 	{
-		id: 0,
+		name: 'Preferences',
 		question: 'How do you drink your coffee?',
 		answers: [
 			{
@@ -114,10 +114,9 @@ export const questions = [
 					'Dense and finely ground beans for an intense, flavorful experience',
 			},
 		],
-		answer: '',
 	},
 	{
-		id: 1,
+		name: 'Bean Type',
 		question: 'What type of coffee?',
 		answers: [
 			{
@@ -136,10 +135,9 @@ export const questions = [
 					'Combination of two or three dark roasted beans of organic coffees',
 			},
 		],
-		answer: '',
 	},
 	{
-		id: 2,
+		name: 'Quantity',
 		question: 'How much would you like?',
 		answers: [
 			{
@@ -158,10 +156,9 @@ export const questions = [
 					'Perfect for offices and events. Yields about 90 delightful cups.',
 			},
 		],
-		answer: '',
 	},
 	{
-		id: 3,
+		name: 'Grind Option',
 		question: 'Want us to grind them?',
 		answers: [
 			{
@@ -180,10 +177,9 @@ export const questions = [
 					'Course ground beans specially suited for french press coffee',
 			},
 		],
-		answer: '',
 	},
 	{
-		id: 4,
+		name: 'Deliveries',
 		question: 'How often should we deliver?',
 		answers: [
 			{
@@ -195,16 +191,13 @@ export const questions = [
 			{
 				title: 'Every 2 weeks',
 				frequency: 'biweekly',
-				description:
-					'per shipment. Includes free priority shipping.',
+				description: 'per shipment. Includes free priority shipping.',
 			},
 			{
 				title: 'Every month',
 				frequency: 'monthly',
-				description:
-					'per shipment. Includes free priority shipping.',
+				description: 'per shipment. Includes free priority shipping.',
 			},
 		],
-		answer: '',
 	},
 ];
