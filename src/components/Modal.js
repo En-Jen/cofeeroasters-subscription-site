@@ -7,8 +7,11 @@ import { COLORS, FONTS, FONT_SIZES, WEIGHTS, BREAKPOINTS } from '../constants';
 import OrderSummaryText from './OrderSummaryText';
 import Button from './Button';
 
-function Modal({ showDialog, setShowDialog, orderSelections }) {
+function Modal({ showDialog, setShowDialog, orderSelections, pricePerMonth }) {
 	const close = () => setShowDialog(false);
+
+    const formattedPrice = typeof pricePerMonth === 'number' ? pricePerMonth.toFixed(2) : '--';
+    const priceText = `$${formattedPrice} / mo`;
 
 	return (
 		<ModalOverlay isOpen={showDialog} onDismiss={close}>
@@ -24,11 +27,11 @@ function Modal({ showDialog, setShowDialog, orderSelections }) {
 						discount codes can also be redeemed at the checkout.
 					</Subtext>
 					<CheckoutWrapper>
-						<Price>$14.00 / mo</Price>
+						<Price>{priceText}</Price>
 						<ButtonWrapper>
 							<Button onClick={close}>
 								<span>Checkout</span>
-								<ButtonPrice> - $14.00 / mo</ButtonPrice>
+								<ButtonPrice> - {priceText}</ButtonPrice>
 							</Button>
 						</ButtonWrapper>
 					</CheckoutWrapper>

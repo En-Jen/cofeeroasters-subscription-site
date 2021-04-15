@@ -17,6 +17,7 @@ function OrderForm() {
 	});
 	const [pricePerMonth, setPricePerMonth] = useState(null);
 	const [showDialog, setShowDialog] = useState(false);
+	const [isFormComplete, setIsFormComplete] = useState(false);
 
 	// Get price per shipment and update state when orderSelections changes
 	useEffect(() => {
@@ -55,10 +56,9 @@ function OrderForm() {
 		}
 	}, [pricePerShipment, orderSelections, setPricePerMonth]);
 
-	const open = () => setShowDialog(true);
-
-	// Check if order form is complete
-	const isFormComplete = () => {
+	// Check if order form is complete and set state accordingly. Use this to
+	// toggle whether Create my plan button is disabled
+	useEffect(() => {
 		const orderSelectionsCopy = orderSelections.slice();
 		// Get orderSelections array without value for grind option
 		orderSelectionsCopy.splice(3, 1);
@@ -67,9 +67,11 @@ function OrderForm() {
 			(orderSelections[0] === 'Capsule' &&
 				!orderSelectionsCopy.includes(null))
 		) {
-			return true;
-		} else return false;
-	};
+			setIsFormComplete(true);
+		} else setIsFormComplete(false);
+	}, [orderSelections, setIsFormComplete]);
+
+	const open = () => setShowDialog(true);
 
 	return (
 		<section>
@@ -82,7 +84,7 @@ function OrderForm() {
 			<OrderSummary orderSelections={orderSelections} />
 			<Spacer size={56} tabletAndUp={40} />
 			<ButtonWrapper>
-				<Button onClick={open} disabled={!isFormComplete()}>
+				<Button onClick={open} disabled={!isFormComplete}>
 					Create my plan!
 				</Button>
 			</ButtonWrapper>
