@@ -10,11 +10,12 @@ import Modal from './Modal';
 
 function OrderForm() {
 	const [orderSelections, setOrderSelections] = useState(Array(5).fill(null));
-	const [pricePerShipment, setPricePerShipment] = React.useState({
+	const [pricePerShipment, setPricePerShipment] = useState({
 		weekly: 7.2,
 		biweekly: 9.6,
 		monthly: 12.0,
 	});
+	const [pricePerMonth, setPricePerMonth] = useState(null);
 	const [showDialog, setShowDialog] = useState(false);
 
 	// Get price per shipment and update state when orderSelections changes
@@ -39,6 +40,20 @@ function OrderForm() {
 			});
 		}
 	}, [orderSelections, setPricePerShipment]);
+
+	// Get price per month and update state when pricePerShipment changes
+	useEffect(() => {
+		if (orderSelections[2] && orderSelections[4] === 'Every week') {
+			setPricePerMonth(pricePerShipment.weekly * 4);
+		} else if (
+			orderSelections[2] &&
+			orderSelections[4] === 'Every 2 weeks'
+		) {
+			setPricePerMonth(pricePerShipment.biweekly * 2);
+		} else if (orderSelections[2] && orderSelections[4] === 'Every month') {
+			setPricePerMonth(pricePerShipment.monthly);
+		}
+	}, [pricePerShipment, orderSelections, setPricePerMonth]);
 
 	const open = () => setShowDialog(true);
 
@@ -76,6 +91,7 @@ function OrderForm() {
 				showDialog={showDialog}
 				setShowDialog={setShowDialog}
 				orderSelections={orderSelections}
+				pricePerMonth={pricePerMonth}
 			/>
 		</section>
 	);
