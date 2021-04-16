@@ -15,17 +15,17 @@ function PlanAccordion({
 	orderSelections,
 	setOrderSelections,
 	pricePerShipment,
-	indices,
-	setIndices,
+	openAccordItems,
+	setOpenAccordItems,
 }) {
 	// Toggle which accordion questions are set to open
 	function toggleItem(toggledIndex) {
-		if (indices.includes(toggledIndex)) {
-			setIndices(
-				indices.filter(currentIndex => currentIndex !== toggledIndex)
+		if (openAccordItems.includes(toggledIndex)) {
+			setOpenAccordItems(
+				openAccordItems.filter(currentIndex => currentIndex !== toggledIndex)
 			);
 		} else {
-			setIndices([...indices, toggledIndex].sort());
+			setOpenAccordItems([...openAccordItems, toggledIndex].sort());
 		}
 	}
 
@@ -40,8 +40,8 @@ function PlanAccordion({
 
 		// Close Accordion panel for "Want us to grind them?" if "Capsule" is selected
 		// and panel is already open for grind question
-		if (itemIndex === 0 && optionIndex === 0 && indices.includes(3)) {
-			setIndices(indices.filter(currentIndex => currentIndex !== 3));
+		if (itemIndex === 0 && optionIndex === 0 && openAccordItems.includes(3)) {
+			setOpenAccordItems(openAccordItems.filter(currentIndex => currentIndex !== 3));
 		}
 	}
 
@@ -110,7 +110,7 @@ function PlanAccordion({
 	});
 
 	return (
-		<Accordion index={indices} onChange={toggleItem}>
+		<Accordion index={openAccordItems} onChange={toggleItem}>
 			{renderedOrderOptions}
 		</Accordion>
 	);

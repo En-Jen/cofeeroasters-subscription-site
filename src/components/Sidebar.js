@@ -7,17 +7,20 @@ import { questions } from '../data';
 function Sidebar({
 	activeQuestion,
 	setActiveQuestion,
-	indices,
-	setIndices,
+	openAccordItems,
+	setOpenAccordItems,
 	orderSelections,
 }) {
-	function openAccordionItem(e) {
+	function handleClick(e) {
 		const index = parseInt(e.target.id, 10);
 
 		// Open accordion panel that corresponds with nav li unless Capsule
 		// is selected for first question, don't open grind option panel
-		if (!indices.includes(index) && orderSelections[0] !== 'Capsules') {
-			setIndices([...indices, index].sort());
+		if (
+			!openAccordItems.includes(index) &&
+			orderSelections[0] !== 'Capsules'
+		) {
+			setOpenAccordItems([...openAccordItems, index].sort());
 		}
 
 		setActiveQuestion(index);
@@ -34,7 +37,7 @@ function Sidebar({
 								<Link
 									href={`#question-${i}`}
 									id={i}
-									onClick={openAccordionItem}
+									onClick={handleClick}
 								>
 									<Number active={active} id={i}>
 										0{i + 1}
