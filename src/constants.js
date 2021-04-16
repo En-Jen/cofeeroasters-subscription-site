@@ -43,6 +43,7 @@ export const BREAKPOINT_SIZES = {
 	tablet: 768,
 	laptop: 1024,
 	desktop: 1200,
+	desktopLarge: 1380,
 };
 
 export const BREAKPOINTS = {
@@ -51,4 +52,5 @@ export const BREAKPOINTS = {
 	tablet: `(min-width: ${BREAKPOINT_SIZES.tablet}px)`,
 	laptop: `(min-width: ${BREAKPOINT_SIZES.laptop}px)`,
 	desktop: `(min-width: ${BREAKPOINT_SIZES.desktop}px)`,
+	desktopLarge: `(min-width: ${BREAKPOINT_SIZES.desktopLarge}px)`,
 };

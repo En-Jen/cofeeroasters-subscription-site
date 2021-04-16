@@ -115,7 +115,17 @@ function OrderForm() {
 
 const Wrapper = styled.section`
 	@media ${BREAKPOINTS.laptop} {
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		gap: 64px;
+	}
+
+	@media ${BREAKPOINTS.desktop} {
+		gap: 125px;
+	}
+
+	@media ${BREAKPOINTS.desktopLarge} {
+		padding: 0 85px;
 	}
 `;
 
