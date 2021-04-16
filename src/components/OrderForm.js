@@ -20,6 +20,8 @@ function OrderForm() {
 	const [showDialog, setShowDialog] = useState(false);
 	const [isFormComplete, setIsFormComplete] = useState(false);
 	const [activeQuestion, setActiveQuestion] = useState(0);
+	// Array with indices of open AccordionItems
+	const [indices, setIndices] = React.useState([0]);
 
 	// Get price per shipment and update state when orderSelections changes
 	useEffect(() => {
@@ -80,12 +82,17 @@ function OrderForm() {
 			<Sidebar
 				activeQuestion={activeQuestion}
 				setActiveQuestion={setActiveQuestion}
+				indices={indices}
+				setIndices={setIndices}
+				orderSelections={orderSelections}
 			/>
 			<div>
 				<PlanAccordion
 					orderSelections={orderSelections}
 					setOrderSelections={setOrderSelections}
 					pricePerShipment={pricePerShipment}
+					indices={indices}
+					setIndices={setIndices}
 				/>
 				<Spacer size={120} tabletAndUp={144} desktopAndUp={88} />
 				<OrderSummary orderSelections={orderSelections} />

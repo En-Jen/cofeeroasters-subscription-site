@@ -15,10 +15,9 @@ function PlanAccordion({
 	orderSelections,
 	setOrderSelections,
 	pricePerShipment,
+	indices,
+	setIndices,
 }) {
-	// Array with indices of open AccordionItems
-	const [indices, setIndices] = React.useState([0]);
-
 	// Toggle which accordion questions are set to open
 	function toggleItem(toggledIndex) {
 		if (indices.includes(toggledIndex)) {
@@ -40,6 +39,7 @@ function PlanAccordion({
 		setOrderSelections(newSelections);
 
 		// Close Accordion panel for "Want us to grind them?" if "Capsule" is selected
+		// and panel is already open for grind question
 		if (itemIndex === 0 && optionIndex === 0 && indices.includes(3)) {
 			setIndices(indices.filter(currentIndex => currentIndex !== 3));
 		}
@@ -51,7 +51,7 @@ function PlanAccordion({
 		return (
 			<AccordionItem
 				key={itemIndex}
-				id={`question-${itemIndex + 1}`}
+				id={`question-${itemIndex}`}
 				disabled={disabled}
 			>
 				<QuestionWrapper>
