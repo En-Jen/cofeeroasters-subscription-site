@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { Link } from 'react-scroll';
 
 import { COLORS, FONT_SIZES, FONTS, WEIGHTS, BREAKPOINTS } from '../constants';
 import { questions } from '../data';
@@ -34,7 +35,11 @@ function Sidebar({
 						const active = activeQuestion === i;
 						return (
 							<ListItem key={i} active={active}>
-								<Link
+								<StyledLink
+									to={`question-${i + 1}`}
+									spy={true}
+									smooth={true}
+									duration={300}
 									href={`#question-${i + 1}`}
 									id={i}
 									onClick={handleClick}
@@ -43,7 +48,7 @@ function Sidebar({
 										0{i + 1}
 									</Number>
 									<Title id={i}>{item.name}</Title>
-								</Link>
+								</StyledLink>
 							</ListItem>
 						);
 					})}
@@ -82,8 +87,9 @@ const ListItem = styled.li`
 	}
 `;
 
-const Link = styled.a`
+const StyledLink = styled(Link)`
 	text-decoration: none;
+	cursor: pointer;
 	display: grid;
 	grid-template-columns: 35px 196px;
 	gap: 24px;
