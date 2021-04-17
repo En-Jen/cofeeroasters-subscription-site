@@ -78,7 +78,7 @@ const GlobalStyles = createGlobalStyle`
         max-width: 1440px;
         margin: 0 auto;
         margin-bottom: 72px;
-        overflow-x: hidden;
+        /* overflow-x: hidden; */
 
         @media ${BREAKPOINTS.laptop} {
             font-size: ${FONT_SIZES.xs};

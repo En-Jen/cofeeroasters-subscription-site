@@ -35,7 +35,7 @@ function Sidebar({
 						return (
 							<ListItem key={i} active={active}>
 								<Link
-									href={`#question-${i}`}
+									href={`#question-${i + 1}`}
 									id={i}
 									onClick={handleClick}
 								>
@@ -58,6 +58,10 @@ const Wrapper = styled.aside`
 
 	@media ${BREAKPOINTS.laptop} {
 		display: revert;
+		height: min-content;
+		position: -webkit-sticky;
+		position: sticky;
+		top: 24px;
 	}
 `;
 

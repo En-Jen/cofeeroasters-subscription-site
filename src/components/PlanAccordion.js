@@ -51,7 +51,7 @@ function PlanAccordion({
 		return (
 			<AccordionItem
 				key={itemIndex}
-				id={`question-${itemIndex}`}
+				id={`question-${itemIndex + 1}`}
 				disabled={disabled}
 			>
 				<QuestionWrapper>
