@@ -9,6 +9,21 @@ import ukIcon from './assets/about/desktop/illustration-uk.svg';
 import canadaIcon from './assets/about/desktop/illustration-canada.svg';
 import australiaIcon from './assets/about/desktop/illustration-australia.svg';
 
+export const navLinks = [
+	{
+		text: 'Home',
+		path: '/'
+	},
+	{
+		text: 'About us',
+		path: '/about'
+	},
+	{
+		text: 'Create your plan',
+		path: '/plan'
+	},
+]
+
 export const collection = [
 	{
 		image: granEspressoImg,

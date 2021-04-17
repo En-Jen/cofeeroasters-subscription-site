@@ -4,9 +4,7 @@ import styled from 'styled-components/macro';
 import iconClose from '../assets/shared/mobile/icon-close.svg';
 import iconHamburger from '../assets/shared/mobile/icon-hamburger.svg';
 
-function HamburgerButton() {
-    const [expanded, setExpanded] = useState(false);
-
+function HamburgerButton({ expanded, setExpanded }) {
 	return (
 		<Wrapper
 			onClick={() => setExpanded(!expanded)}

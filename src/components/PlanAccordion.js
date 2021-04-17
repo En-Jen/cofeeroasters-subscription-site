@@ -22,7 +22,9 @@ function PlanAccordion({
 	function toggleItem(toggledIndex) {
 		if (openAccordItems.includes(toggledIndex)) {
 			setOpenAccordItems(
-				openAccordItems.filter(currentIndex => currentIndex !== toggledIndex)
+				openAccordItems.filter(
+					currentIndex => currentIndex !== toggledIndex
+				)
 			);
 		} else {
 			setOpenAccordItems([...openAccordItems, toggledIndex].sort());
@@ -40,8 +42,14 @@ function PlanAccordion({
 
 		// Close Accordion panel for "Want us to grind them?" if "Capsule" is selected
 		// and panel is already open for grind question
-		if (itemIndex === 0 && optionIndex === 0 && openAccordItems.includes(3)) {
-			setOpenAccordItems(openAccordItems.filter(currentIndex => currentIndex !== 3));
+		if (
+			itemIndex === 0 &&
+			optionIndex === 0 &&
+			openAccordItems.includes(3)
+		) {
+			setOpenAccordItems(
+				openAccordItems.filter(currentIndex => currentIndex !== 3)
+			);
 		}
 	}
 
