@@ -37,9 +37,12 @@ function SocialIcons() {
 
 const Wrapper = styled.div`
 	display: flex;
+	align-items: center;
 `;
 
 const Link = styled.a`
+	height: 24px;
+	
 	&:not(:last-of-type) {
 		margin-right: 24px;
 	}

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components/macro';
 
 const Logo = ({ fill }) => {
 	return (
-		<Link exact to="/">
+		<Wrapper exact to="/">
 			<svg width="237" height="27" xmlns="http://www.w3.org/2000/svg">
 				<g fillRule="nonzero" fill="none">
 					<path
@@ -16,8 +17,14 @@ const Logo = ({ fill }) => {
 					/>
 				</g>
 			</svg>
-		</Link>
+		</Wrapper>
 	);
 };
+
+const Wrapper = styled(Link)`
+	// For some reason the height of the link was bigger than
+	// the logo it was containing so I had to set it manually
+	height: 27px;
+`;
 
 export default Logo;
