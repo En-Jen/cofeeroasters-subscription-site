@@ -82,7 +82,7 @@ function PlanAccordion({
 					</Question>
 				</QuestionWrapper>
 				<AccordionPanel>
-					<CardWrapper>
+					<CardsWrapper>
 						{item.answers.map((option, optionIndex) => {
 							const { title, frequency, description } = option;
 							return (
@@ -111,7 +111,7 @@ function PlanAccordion({
 								</Card>
 							);
 						})}
-					</CardWrapper>
+					</CardsWrapper>
 				</AccordionPanel>
 			</AccordionItem>
 		);
@@ -181,7 +181,7 @@ const ArrowIcon = styled.svg`
 	}
 `;
 
-const CardWrapper = styled.div`
+const CardsWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 96px;

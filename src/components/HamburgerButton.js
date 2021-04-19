@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components/macro';
 
 import iconClose from '../assets/shared/mobile/icon-close.svg';

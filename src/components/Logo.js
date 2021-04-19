@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
+import VisuallyHidden from './VisuallyHidden';
+
 const Logo = ({ fill }) => {
 	return (
 		<Wrapper exact to="/">
@@ -17,6 +19,7 @@ const Logo = ({ fill }) => {
 					/>
 				</g>
 			</svg>
+			<VisuallyHidden>coffee roasters home page</VisuallyHidden>
 		</Wrapper>
 	);
 };

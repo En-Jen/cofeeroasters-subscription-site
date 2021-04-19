@@ -13,7 +13,8 @@ function Sidebar({
 	orderSelections,
 }) {
 	function handleClick(e) {
-		const index = parseInt(e.target.id, 10);
+		// console.log(e.target.dataset.index);
+		const index = parseInt(e.target.dataset.index, 10);
 
 		// Open accordion panel that corresponds with nav li unless Capsule
 		// is selected for first question, don't open grind option panel
@@ -41,13 +42,17 @@ function Sidebar({
 									smooth={true}
 									duration={300}
 									href={`#question-${i + 1}`}
-									id={i}
+									data-index={i}
 									onClick={handleClick}
 								>
-									<Number active={active} id={i}>
+									<Number
+										active={active}
+										data-index={i}
+										aria-hidden="true"
+									>
 										0{i + 1}
 									</Number>
-									<Title id={i}>{item.name}</Title>
+									<Title data-index={i}>{item.name}</Title>
 								</StyledLink>
 							</ListItem>
 						);
