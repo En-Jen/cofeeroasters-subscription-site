@@ -11,7 +11,7 @@ import bgMobile from '../assets/about/mobile/bg-quality.png';
 
 function Quality() {
 	return (
-		<Wrapper>
+		<Wrapper aria-label="quality">
             <ContentWrapper>
                 <Picture>
                     <source

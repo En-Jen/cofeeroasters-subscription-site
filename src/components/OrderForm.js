@@ -77,7 +77,7 @@ function OrderForm() {
 	const open = () => setShowDialog(true);
 
 	return (
-		<Wrapper>
+		<Wrapper aria-label="order form">
 			<Sidebar
 				activeQuestion={activeQuestion}
 				setActiveQuestion={setActiveQuestion}

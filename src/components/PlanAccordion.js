@@ -82,7 +82,7 @@ function PlanAccordion({
 					</Question>
 				</QuestionWrapper>
 				<AccordionPanel>
-					<CardsWrapper>
+					<CardsWrapper aria-label={`${item.name} options`}>
 						{item.answers.map((option, optionIndex) => {
 							const { title, frequency, description } = option;
 							return (
@@ -98,6 +98,7 @@ function PlanAccordion({
 									selected={
 										orderSelections[itemIndex] === title
 									}
+									aria-label={title}
 								>
 									<CardHeading>{title}</CardHeading>
 									{/* Access price per shipment if it is the last question */}

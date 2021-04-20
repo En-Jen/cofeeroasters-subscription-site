@@ -7,7 +7,7 @@ import Card from './Card';
 
 function Collection() {
 	return (
-		<Wrapper>
+		<Wrapper aria-label="why choose us">
 			<Intro>
 				<Heading>Why choose us?</Heading>
 				<p>

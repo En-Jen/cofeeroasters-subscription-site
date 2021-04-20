@@ -7,7 +7,7 @@ import Card from './Card';
 
 function Collection() {
 	return (
-		<Wrapper>
+		<Wrapper aria-label="our collection of blends">
 			<Heading>our collection</Heading>
 			<CardsWrapper>
 				{collection.map((item, i) => (

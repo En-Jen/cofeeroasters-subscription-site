@@ -54,21 +54,21 @@ export const collection = [
 export const whyChoose = [
 	{
 		image: beanIcon,
-		alt: 'coffee bean icon',
+		alt: 'coffee bean',
 		heading: 'Best quality',
 		description:
 			'Discover an endless variety of the world’s best artisan coffee from each of our roasters.',
 	},
 	{
 		image: giftIcon,
-		alt: 'gift icon',
+		alt: 'gift',
 		heading: 'Exclusive benefits',
 		description:
 			'Special offers and swag when you subscribe, including 30% off your first shipment.',
 	},
 	{
 		image: truckIcon,
-		alt: 'truck icon',
+		alt: 'truck',
 		heading: 'Free shipping',
 		description:
 			'We cover the cost and coffee is delivered fast. Peak freshness: guaranteed.',

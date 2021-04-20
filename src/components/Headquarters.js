@@ -6,27 +6,31 @@ import { COLORS, FONT_SIZES, BREAKPOINTS } from '../constants';
 
 function Headquarters() {
 	return (
-		<Wrapper>
+		<Wrapper aria-label="headquarters">
 			<SectionHeading>Our headquarters</SectionHeading>
 			<ContentWrapper>
 				{headquarters.map((location, i) => (
 					<Location key={i}>
 						<Icon
 							src={location.icon}
-							alt={`${location.location} map icon`}
+							alt={`${location.location} map`}
 						/>
 						<LocationHeading>{location.location}</LocationHeading>
 						<div>
-							<ContactInfo>
-								{location.information.street}
-							</ContactInfo>
-							<ContactInfo>
-								{location.information.city}
-							</ContactInfo>
-							<ContactInfo>
-								{location.information.state}
-							</ContactInfo>
-							<ContactInfo>
+							<div
+								aria-label={`${location.location} headquarters address`}
+							>
+								<ContactInfo>
+									{location.information.street}
+								</ContactInfo>
+								<ContactInfo>
+									{location.information.city}
+								</ContactInfo>
+								<ContactInfo>
+									{location.information.state}
+								</ContactInfo>
+							</div>
+							<ContactInfo aria-label="phone number">
 								{location.information.phone}
 							</ContactInfo>
 						</div>
@@ -94,7 +98,7 @@ const LocationHeading = styled.h3`
 		line-height: 1.5;
 	}
 
-    @media ${BREAKPOINTS.desktop} {
+	@media ${BREAKPOINTS.desktop} {
 		font-size: ${BREAKPOINTS.l};
 		line-height: 1.125;
 	}

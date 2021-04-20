@@ -17,13 +17,13 @@ function HowItWorks({ variant, children }) {
 	}
 
 	return (
-		<Component>
+		<Component aria-label="how it works">
 			{variant === 'home' && <Heading>How it works</Heading>}
-			<Line />
+			<Line role="presentation" />
 			<StepsWrapper>
 				<Step>
 					<Circle />
-					<StepNumber>01</StepNumber>
+					<StepNumber aria-label="step 1">01</StepNumber>
 					<StepTitle>Pick your coffee</StepTitle>
 					<p>
 						Select from our evolving range of artisan coffees. Our
@@ -34,7 +34,7 @@ function HowItWorks({ variant, children }) {
 				</Step>
 				<Step>
 					<Circle />
-					<StepNumber>02</StepNumber>
+					<StepNumber aria-label="step 2">02</StepNumber>
 					<StepTitle>Choose the frequency</StepTitle>
 					<p>
 						Customize your order frequency, quantity, even your
@@ -45,7 +45,7 @@ function HowItWorks({ variant, children }) {
 				</Step>
 				<Step>
 					<Circle />
-					<StepNumber>03</StepNumber>
+					<StepNumber aria-label="step 3">03</StepNumber>
 					<StepTitle>Receive and enjoy!</StepTitle>
 					<p>
 						We ship your package within 48 hours, freshly roasted.
@@ -82,7 +82,6 @@ const PlanHowItWorks = styled(BaseHowItWorks)`
 	background-image: url(${bgImageMobile});
 	background-size: cover;
 	border-radius: 10px;
-	/* TODO: IMPLEMENT BETTER SOLUTION!!!!!! */
 	/* Stretch width to edge of viewport */
 	margin-left: -6.9%;
 	margin-right: -6.9%;
@@ -116,7 +115,7 @@ const Line = styled.hr`
 
 	@media ${BREAKPOINTS.tablet} {
 		display: block;
-        // Width of 2 grid cells plus 2 grid gaps
+		// Width of 2 grid cells plus 2 grid gaps
 		width: calc((100% - 96px) / 3 * 2 + 96px);
 		transform: translateX(15px) translateY(17px);
 	}

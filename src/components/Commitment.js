@@ -8,7 +8,7 @@ import imgCommitmentMobile from '../assets/about/mobile/image-commitment.jpg';
 
 function Commitment() {
 	return (
-		<Wrapper>
+		<Wrapper aria-label="our commitment">
 			<Picture>
 				<source
 					media="(min-width: 1024px)"

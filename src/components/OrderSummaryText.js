@@ -2,10 +2,18 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import { COLORS, FONTS, FONT_SIZES, WEIGHTS } from '../constants';
+import VisuallyHidden from './VisuallyHidden';
 
 function OrderSummaryText({ orderSelections }) {
 	const displaySelection = index => {
-		return orderSelections[index] ? orderSelections[index] : '_____';
+		return orderSelections[index] ? (
+			orderSelections[index]
+		) : (
+			<>
+				<span aria-hidden="true">_____</span>
+				<VisuallyHidden>blank</VisuallyHidden>
+			</>
+		);
 	};
 
 	const isCapsuleSelected = orderSelections[0] === 'Capsule';
