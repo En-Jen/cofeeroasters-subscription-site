@@ -7,10 +7,11 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Plan from './pages/Plan';
+import Attribution from './components/Attribution';
 
 function App() {
 	return (
-		<Wrapper>
+		<>
 			<SkipLink />
 			<Navbar />
 			<Switch>
@@ -23,7 +24,8 @@ function App() {
 				/>
 			</Switch>
 			<Footer />
-		</Wrapper>
+			<Attribution />
+		</>
 	);
 }
 
