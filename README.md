@@ -48,8 +48,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   [Solution URL](https://www.frontendmentor.io/solutions/coffeeroasters-subscription-site-react-styled-components-a11y-ZeyLGytph)
+-   [Live Site URL](https://focused-panini-ea6dd0.netlify.app/)
 
 ## My process
 
