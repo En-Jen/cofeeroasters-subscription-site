@@ -27,7 +27,7 @@ function Hero({ variant, title, description, children }) {
 	return (
 		<Component>
 			<Content>
-				<Heading>{title}</Heading>
+				<Heading id="main">{title}</Heading>
 				<p>{description}</p>
 				{children}
 			</Content>

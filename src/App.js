@@ -1,15 +1,17 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+
+import SkipLink from './components/SkipLink';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Plan from './pages/Plan';
-import './App.css';
 
 function App() {
 	return (
-		<div>
+		<Wrapper>
+			<SkipLink />
 			<Navbar />
 			<Switch>
 				<Route exact path="/" component={Home} />
@@ -21,7 +23,7 @@ function App() {
 				/>
 			</Switch>
 			<Footer />
-		</div>
+		</Wrapper>
 	);
 }
 
