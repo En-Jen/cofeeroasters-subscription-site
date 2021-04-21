@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from 'framer-motion';
 
 import SkipLink from './components/SkipLink';
 import Navbar from './components/Navbar';

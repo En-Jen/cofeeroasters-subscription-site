@@ -108,6 +108,7 @@ Users should be able to:
 -   [Let's Bring Spacer GIFs Back!](https://www.joshwcomeau.com/react/modern-spacer-gif/) - Amazing blog post on the rationale for using Spacer components between components to provide whitespace. I just tweaked Josh W Comeau's Spacer component in my project to make it responsive.
 -   [VisuallyHidden](https://www.joshwcomeau.com/snippets/react-components/visually-hidden/) - Another blog post by Josh W Comeau. Provides code for a VisuallyHidden component used to wrap around text that is not visible on the page but is read to users who are using a screen-reader.
 -   [The HTML picture element explained](https://www.youtube.com/watch?v=Rik3gHT24AM&t=751s&ab_channel=KevinPowell) - Nice video showing how to use the picture element to change the picture that's loaded into the browser based on the screen size.
+-   [Animate When Element is In-View with Framer Motion](https://javascript.plainenglish.io/animate-when-element-is-in-view-with-framer-motion-63b254403bf) - Useful article for creating logic that waits until an element is in the viewport to animate it with Framer Motion. I used this for the circles in the How it Works section.
 
 ## Author
 
