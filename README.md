@@ -64,6 +64,7 @@ Users should be able to:
 -   [Reach UI](https://reach.tech/) - Accessible React component library. Used the Accordion and Dialog (Modal) components
 -   [React Router](https://reactrouter.com/web/guides/quick-start) - For routing between pages
 -   [React Scroll](https://github.com/fisshy/react-scroll) - For smooth vertical scrolling
+-   [Framer Motion](https://www.framer.com/api/motion/) - For animations
 
 ### What I learned
 

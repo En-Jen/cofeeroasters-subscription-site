@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components/macro';
+import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from 'framer-motion';
 
 import { COLORS, FONT_SIZES, BREAKPOINTS } from '../constants';
 import bgImageDesktop from '../assets/plan/desktop/bg-steps.png';
@@ -7,6 +9,29 @@ import bgImageTablet from '../assets/plan/tablet/bg-steps.png';
 import bgImageMobile from '../assets/plan/mobile/bg-steps.png';
 
 function HowItWorks({ variant, children }) {
+	const controls = useAnimation();
+	const [ref, inView] = useInView();
+
+	useEffect(() => {
+		if (inView) {
+			controls.start('visible');
+		}
+		if (!inView) {
+			controls.start('hidden');
+		}
+	}, [controls, inView]);
+
+	const circleVariants = {
+		visible: {
+			scale: [1, 1.6, 1],
+			borderColor: [
+				`${COLORS.darkCyan}`,
+				`${COLORS.lightCyan}`,
+				`${COLORS.darkCyan}`,
+			],
+		},
+	};
+
 	let Component;
 	if (variant === 'home') {
 		Component = HomeHowItWorks;
@@ -22,7 +47,13 @@ function HowItWorks({ variant, children }) {
 			<Line role="presentation" />
 			<StepsWrapper>
 				<Step>
-					<Circle />
+					<Circle
+						transition={{ duration: 1.2 }}
+						ref={ref}
+						animate={controls}
+						initial="hidden"
+						variants={circleVariants}
+					/>
 					<StepNumber aria-label="step 1">01</StepNumber>
 					<StepTitle>Pick your coffee</StepTitle>
 					<p>
@@ -33,7 +64,13 @@ function HowItWorks({ variant, children }) {
 					</p>
 				</Step>
 				<Step>
-					<Circle />
+					<Circle
+						transition={{ duration: 1.2, delay: 1.2 }}
+						ref={ref}
+						animate={controls}
+						initial="hidden"
+						variants={circleVariants}
+					/>
 					<StepNumber aria-label="step 2">02</StepNumber>
 					<StepTitle>Choose the frequency</StepTitle>
 					<p>
@@ -44,7 +81,13 @@ function HowItWorks({ variant, children }) {
 					</p>
 				</Step>
 				<Step>
-					<Circle />
+					<Circle
+						transition={{ duration: 1.2, delay: 2.4 }}
+						ref={ref}
+						animate={controls}
+						initial="hidden"
+						variants={circleVariants}
+					/>
 					<StepNumber aria-label="step 3">03</StepNumber>
 					<StepTitle>Receive and enjoy!</StepTitle>
 					<p>
@@ -158,7 +201,7 @@ const Step = styled.div`
 	}
 `;
 
-const Circle = styled.div`
+const Circle = styled(motion.div)`
 	width: 31px;
 	height: 31px;
 	border-radius: 50%;
