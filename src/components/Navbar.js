@@ -13,9 +13,16 @@ function Navbar() {
 		<Wrapper>
 			<Logo />
 			<HamburgerBtnWrapper>
-				<HamburgerButton expanded={expanded} setExpanded={setExpanded} />
+				<HamburgerButton
+					expanded={expanded}
+					setExpanded={setExpanded}
+				/>
 			</HamburgerBtnWrapper>
-			<NavLinks variant="header" expanded={expanded} setExpanded={setExpanded} />
+			<NavLinks
+				variant="header"
+				expanded={expanded}
+				setExpanded={setExpanded}
+			/>
 		</Wrapper>
 	);
 }
@@ -26,6 +33,10 @@ const Wrapper = styled.header`
 	align-items: center;
 	position: relative;
 	height: 90px;
+
+	@media ${BREAKPOINTS.tablet} {
+		height: 113px;
+	}
 `;
 
 const HamburgerBtnWrapper = styled.div`

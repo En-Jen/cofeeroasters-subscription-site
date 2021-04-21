@@ -52,6 +52,7 @@ const HomeHero = styled(BaseHero)`
 
 	@media ${BREAKPOINTS.laptop} {
 		background-image: url(${coffeePressDesktop});
+		height: 600px;
 	}
 `;
 
@@ -65,6 +66,7 @@ const AboutHero = styled(BaseHero)`
 
 	@media ${BREAKPOINTS.laptop} {
 		background-image: url(${whiteCupDesktop});
+		height: 450px;
 	}
 `;
 
@@ -78,6 +80,7 @@ const PlanHero = styled(BaseHero)`
 
 	@media ${BREAKPOINTS.laptop} {
 		background-image: url(${blackCupDesktop});
+		height: 450px;
 	}
 `;
 
