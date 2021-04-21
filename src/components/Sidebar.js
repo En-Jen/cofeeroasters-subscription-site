@@ -13,9 +13,8 @@ function Sidebar({
 	orderSelections,
 }) {
 	function handleClick(e) {
-		// console.log(e.target.dataset.index);
 		const index = parseInt(e.target.dataset.index, 10);
-
+		
 		// Open accordion panel that corresponds with nav li unless Capsule
 		// is selected for first question, don't open grind option panel
 		if (
@@ -36,7 +35,7 @@ function Sidebar({
 						const active = activeQuestion === i;
 						return (
 							<ListItem key={i} active={active}>
-								<StyledLink
+								<Link
 									to={`question-${i + 1}`}
 									spy={true}
 									smooth={true}
@@ -53,7 +52,7 @@ function Sidebar({
 										0{i + 1}
 									</Number>
 									<Title data-index={i}>{item.name}</Title>
-								</StyledLink>
+								</Link>
 							</ListItem>
 						);
 					})}
@@ -90,14 +89,19 @@ const ListItem = styled.li`
 	&:not(:last-of-type) {
 		border-bottom: 1px solid hsla(215deg, 5%, 54%, 0.25);
 	}
-`;
 
-const StyledLink = styled(Link)`
-	text-decoration: none;
-	cursor: pointer;
-	display: grid;
-	grid-template-columns: 35px 196px;
-	gap: 24px;
+	a {
+		text-decoration: none;
+		cursor: pointer;
+		display: grid;
+		grid-template-columns: 35px 196px;
+		gap: 24px;
+		transition: transform .2s;
+
+		&:hover {
+			transform: translateX(8px);
+		}
+	}
 `;
 
 const Number = styled.span`
