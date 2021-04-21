@@ -1,5 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
+import { pageAnimation } from '../animations';
 import Hero from '../components/Hero';
 import Spacer from '../components/Spacer';
 import Button from '../components/Button';
@@ -9,7 +11,12 @@ import HowItWorks from '../components/HowItWorks';
 
 function Home(props) {
 	return (
-		<main>
+		<motion.main
+			variants={pageAnimation}
+			initial="hidden"
+			animate="visible"
+			exit="exit"
+		>
 			<Hero
 				variant="home"
 				title="Great coffee made simple."
@@ -33,7 +40,7 @@ function Home(props) {
 				</Button>
 			</HowItWorks>
 			<Spacer size={120} tabletAndUp={144} desktopAndUp={200} />
-		</main>
+		</motion.main>
 	);
 }
 

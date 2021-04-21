@@ -1,5 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
+import { pageAnimation } from '../animations';
 import Hero from '../components/Hero';
 import Spacer from '../components/Spacer';
 import Commitment from '../components/Commitment';
@@ -8,7 +10,12 @@ import Headquarters from '../components/Headquarters';
 
 function About() {
 	return (
-		<main>
+		<motion.main
+			variants={pageAnimation}
+			initial="hidden"
+			animate="visible"
+			exit="exit"
+		>
 			<Hero
 				variant="about"
 				title="About Us"
@@ -28,7 +35,7 @@ function About() {
 			<Spacer size={120} tabletAndUp={144} desktopAndUp={168} />
 			<Headquarters />
 			<Spacer size={120} tabletAndUp={144} desktopAndUp={168} />
-		</main>
+		</motion.main>
 	);
 }
 

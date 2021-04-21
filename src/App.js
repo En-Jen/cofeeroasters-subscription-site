@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { AnimatePresence, motion } from "framer-motion";
 
 import SkipLink from './components/SkipLink';
 import Navbar from './components/Navbar';
@@ -14,15 +15,17 @@ function App() {
 		<>
 			<SkipLink />
 			<Navbar />
-			<Switch>
-				<Route exact path="/" component={Home} />
-				<Route exact path="/about" component={About} />
-				<Route
-					exact
-					path="/plan"
-					render={routeProps => <Plan {...routeProps} />}
-				/>
-			</Switch>
+			<AnimatePresence exitBeforeEnter>
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/about" component={About} />
+					<Route
+						exact
+						path="/plan"
+						render={routeProps => <Plan {...routeProps} />}
+					/>
+				</Switch>
+			</AnimatePresence>
 			<Footer />
 			<Attribution />
 		</>

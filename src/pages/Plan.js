@@ -1,5 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
+import { pageAnimation } from '../animations';
 import Spacer from '../components/Spacer';
 import Hero from '../components/Hero';
 import HowItWorks from '../components/HowItWorks';
@@ -7,7 +9,12 @@ import OrderForm from '../components/OrderForm';
 
 function Plan() {
 	return (
-		<main>
+		<motion.main
+			variants={pageAnimation}
+			initial="hidden"
+			animate="visible"
+			exit="exit"
+		>
 			<Hero
 				variant="plan"
 				title="Create a plan"
@@ -19,7 +26,7 @@ function Plan() {
 			<Spacer size={120} tabletAndUp={144} desktopAndUp={168} />
 			<OrderForm />
 			<Spacer size={120} tabletAndUp={144} desktopAndUp={168} />
-		</main>
+		</motion.main>
 	);
 }
 

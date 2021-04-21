@@ -22,10 +22,11 @@ const Wrapper = styled.button`
 	border-radius: 6px;
 	padding: 16px 32px;
 	width: ${p => (p.width ? `${p.width}px` : 'auto')};
-	transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out, transform 0.3s;
 
 	&:hover {
 		background-color: ${COLORS.lightCyan};
+		transform: scale(1.1);
 	}
 
 	&:disabled {

@@ -46,14 +46,14 @@ const HeaderNav = styled(BaseNav)`
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 90px;
+	top: 89px;
 	padding: 40px 24px;
 	background-image: linear-gradient(
 		to bottom,
 		${COLORS.lightCream[100]} 275px,
 		hsla(43deg, 78%, 98%, 0.5)
 	);
-	height: calc(100vh - 90px);
+	height: calc(100vh - 89px);
 	display: ${p => (p.expanded ? 'block' : 'none')};
 
 	@media ${BREAKPOINTS.tablet} {

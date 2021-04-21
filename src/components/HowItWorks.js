@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 
 import { COLORS, FONT_SIZES, BREAKPOINTS } from '../constants';
+import { circleVariants } from '../animations';
 import bgImageDesktop from '../assets/plan/desktop/bg-steps.png';
 import bgImageTablet from '../assets/plan/tablet/bg-steps.png';
 import bgImageMobile from '../assets/plan/mobile/bg-steps.png';
@@ -21,17 +22,6 @@ function HowItWorks({ variant, children }) {
 		}
 	}, [controls, inView]);
 
-	const circleVariants = {
-		visible: {
-			scale: [1, 1.6, 1],
-			borderColor: [
-				`${COLORS.darkCyan}`,
-				`${COLORS.lightCyan}`,
-				`${COLORS.darkCyan}`,
-			],
-		},
-	};
-
 	let Component;
 	if (variant === 'home') {
 		Component = HomeHowItWorks;
@@ -48,7 +38,7 @@ function HowItWorks({ variant, children }) {
 			<StepsWrapper>
 				<Step>
 					<Circle
-						transition={{ duration: 1.2 }}
+						transition={{ duration: 1.2, delay: 1 }}
 						ref={ref}
 						animate={controls}
 						initial="hidden"
@@ -65,7 +55,7 @@ function HowItWorks({ variant, children }) {
 				</Step>
 				<Step>
 					<Circle
-						transition={{ duration: 1.2, delay: 1.2 }}
+						transition={{ duration: 1.2, delay: 2.2 }}
 						ref={ref}
 						animate={controls}
 						initial="hidden"
@@ -82,7 +72,7 @@ function HowItWorks({ variant, children }) {
 				</Step>
 				<Step>
 					<Circle
-						transition={{ duration: 1.2, delay: 2.4 }}
+						transition={{ duration: 1.2, delay: 3.4 }}
 						ref={ref}
 						animate={controls}
 						initial="hidden"
