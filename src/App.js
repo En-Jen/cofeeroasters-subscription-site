@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 import SkipLink from './components/SkipLink';
@@ -11,12 +11,13 @@ import Plan from './pages/Plan';
 import Attribution from './components/Attribution';
 
 function App() {
+	const location = useLocation();
 	return (
 		<>
 			<SkipLink />
 			<Navbar />
 			<AnimatePresence exitBeforeEnter>
-				<Switch>
+				<Switch location={location} key={location.pathname}>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/about" component={About} />
 					<Route
